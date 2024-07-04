@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* Elimina el scroll de la página */
+    overflow: hidden;
 }
 
 .header {
@@ -99,8 +99,8 @@ h1 {
     background-color: #2d333b;
     color: #ffffff;
     font-size: 1rem;
-    -moz-appearance: textfield;
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
@@ -172,7 +172,7 @@ h1 {
     animation: fadeIn 0.5s ease-in-out;
     position: relative;
     bottom: 0;
-    margin-top: 30px;
+    margin-top: 60px; /* Mueve el footer un poco más arriba para móviles */
 }
 
 .footer-content {
@@ -206,21 +206,20 @@ h1 {
     display: none;
     position: fixed;
     z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%; /* Reduce el ancho del popup */
-    height: 60%; /* Reduce el alto del popup */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popup-content {
     background-color: #161b22;
+    margin: 50% auto; /* Centra verticalmente el popup para móviles */
     padding: 20px;
-    margin: 0 auto;
     border-radius: 10px;
-    width: 80%; /* Ajusta el ancho del contenido */
+    width: 80%; /* Ajusta el ancho del popup para móviles */
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -255,75 +254,71 @@ h1 {
 @media (max-width: 767px) {
     .container {
         width: 90%;
-        padding: 20px; /* Reduce el padding para móviles */
-        margin-top: 20px; /* Reduce el margen superior para móviles */
-        margin-bottom: 60px; /* Reduce el margen inferior para móviles */
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 60px;
     }
 
     .header h1 {
-        font-size: 2rem; /* Reduce el tamaño del título para móviles */
+        font-size: 2rem;
     }
 
     h1 {
-        font-size: 1.5rem; /* Reduce el tamaño del título para móviles */
-        margin-bottom: 20px; /* Reduce el margen inferior para móviles */
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
     .input-section {
-        margin-bottom: 20px; /* Reduce el margen inferior para móviles */
+        margin-bottom: 20px;
     }
 
     .input-section label {
-        font-size: 1rem; /* Reduce el tamaño de la etiqueta para móviles */
+        font-size: 1rem;
     }
 
     .input-section input[type="number"],
     .input-section select {
-        padding: 12px 16px; /* Reduce el padding para móviles */
-        font-size: 0.875rem; /* Reduce el tamaño de la fuente para móviles */
+        padding: 12px 16px;
+        font-size: 0.875rem;
     }
 
     .calculate-button {
-        padding: 12px 20px; /* Reduce el padding para móviles */
-        font-size: 0.875rem; /* Reduce el tamaño de la fuente para móviles */
-        margin-bottom: 20px; /* Reduce el margen inferior para móviles */
+        padding: 12px 20px;
+        font-size: 0.875rem;
+        margin-bottom: 20px;
     }
 
     .result-container pre {
-        font-size: 1rem; /* Reduce el tamaño de la fuente para móviles */
+        font-size: 1rem;
     }
 
     .footer {
-        margin-top: 20px; /* Reduce el margen superior para móviles */
+        margin-top: 40px; /* Mueve el footer un poco más arriba para móviles */
     }
 
     .footer p {
-        font-size: 0.875rem; /* Reduce el tamaño de la fuente para móviles */
+        font-size: 0.875rem;
     }
 
     .social-icons a {
-        font-size: 1.25rem; /* Reduce el tamaño de los iconos para móviles */
-        margin: 0 8px; /* Reduce el margen entre iconos para móviles */
-    }
-
-    .popup {
-        width: 90%; /* Ajusta el ancho del popup para móviles */
-        height: 90%; /* Ajusta el alto del popup para móviles */
+        font-size: 1.25rem;
+        margin: 0 8px;
     }
 
     .popup-content {
-        width: 90%; /* Ajusta el ancho del contenido para móviles */
+        margin: 50% auto; /* Centra verticalmente el popup para móviles */
+        width: 90%; /* Ajusta el ancho del popup para móviles */
     }
 
     .popup-buttons button {
-        padding: 8px 14px; /* Reduce el padding de los botones para móviles */
-        font-size: 0.75rem; /* Reduce el tamaño de la fuente de los botones para móviles */
+        padding: 8px 14px;
+        font-size: 0.75rem;
     }
 
     .input-icon {
-        width: 1rem; /* Reduce el tamaño del icono para móviles */
-        height: 1rem; /* Reduce el tamaño del icono para móviles */
-        margin-right: 4px; /* Reduce el margen derecho del icono para móviles */
+        width: 1rem;
+        height: 1rem;
+        margin-right: 4px;
     }
 }
 
@@ -331,44 +326,35 @@ h1 {
 @media (min-width: 768px) and (max-width: 990px) {
     .container {
         width: 80%;
-        padding: 25px; /* Reduce el padding para tablets */
-    }
-
-    .popup {
-        width: 70%; /* Ajusta el ancho del popup para tablets */
-        height: 70%; /* Ajusta el alto del popup para tablets */
+        padding: 25px;
     }
 
     .popup-content {
-        width: 80%; /* Ajusta el ancho del contenido para tablets */
+        width: 70%; /* Ajusta el ancho del popup para tablets */
     }
 
     .popup-buttons button {
-        padding: 10px 16px; /* Ajusta el padding de los botones para tablets */
-        font-size: 0.875rem; /* Ajusta el tamaño de la fuente de los botones para tablets */
+        padding: 10px 16px;
+        font-size: 0.875rem;
     }
 
     .input-icon {
-        width: 1.25rem; /* Ajusta el tamaño del icono para tablets */
-        height: 1.25rem; /* Ajusta el tamaño del icono para tablets */
-        margin-right: 6px; /* Ajusta el margen derecho del icono para tablets */
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 6px;
     }
 }
 
 /* Estilos para pantallas de más de 991px de ancho (desktops) */
 @media (min-width: 991px) {
-    .popup {
-        width: 50%; /* Ajusta el ancho del popup para desktops */
-        height: 50%; /* Ajusta el alto del popup para desktops */
-    }
-
     .popup-content {
-        width: 70%; /* Ajusta el ancho del contenido para desktops */
+        margin: 10% auto; /* Centra verticalmente el popup para desktops */
+        width: 50%; /* Ajusta el ancho del popup para desktops */
     }
 
     .input-icon {
-        width: 1.5rem; /* Ajusta el tamaño del icono para desktops */
-        height: 1.5rem; /* Ajusta el tamaño del icono para desktops */
-        margin-right: 6px; /* Ajusta el margen derecho del icono para desktops */
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 6px;
     }
 }
