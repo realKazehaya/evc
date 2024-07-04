@@ -36,3 +36,9 @@ function closePopup() {
 window.onload = function() {
     document.getElementById("popup").style.display = "block";
 }
+function clearInputs() {
+    document.getElementById("CurrentEvo").value = "";
+    document.getElementById("Credits").value = "";
+    document.getElementById("Gold").value = "";
+    document.getElementById("result-text").textContent = "";
+}
