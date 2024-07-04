@@ -17,8 +17,8 @@ body {
 .container {
     background-color: #161b22;
     width: 90%;
-    max-width: 492px;
-    padding: 32.76px;
+    max-width: 467px; /* Reducido en un 5% */
+    padding: 31.12px; /* Reducido en un 5% */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
@@ -42,8 +42,8 @@ h1 {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 2.04rem;
-    margin-bottom: 24.66px;
+    font-size: 1.94rem; /* Reducido en un 5% */
+    margin-bottom: 23.43px; /* Reducido en un 5% */
 }
 
 @keyframes pulse {
@@ -61,25 +61,25 @@ h1 {
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 16.38px;
+    margin-bottom: 15.56px; /* Reducido en un 5% */
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 1.23rem;
+    font-size: 1.17rem; /* Reducido en un 5% */
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 10.92px 14.56px;
+    padding: 10.38px 13.83px; /* Reducido en un 5% */
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 0.984rem;
+    font-size: 0.935rem; /* Reducido en un 5% */
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
@@ -107,18 +107,18 @@ h1 {
 .button-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16.38px;
+    margin-bottom: 15.56px; /* Reducido en un 5% */
 }
 
 .calculate-button,
 .clear-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 10.92px 20.04px;
+    padding: 10.38px 19.04px; /* Reducido en un 5% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.984rem;
+    font-size: 0.935rem; /* Reducido en un 5% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -130,7 +130,7 @@ h1 {
 }
 
 .result-container {
-    max-height: 164px;
+    max-height: 156px; /* Reducido en un 5% */
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -153,7 +153,7 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 1.23rem;
+    font-size: 1.17rem; /* Reducido en un 5% */
 }
 
 .popup {
@@ -174,7 +174,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 16.38px;
+    padding: 15.56px; /* Reducido en un 5% */
     border-radius: 10px;
     width: 80%;
     text-align: center;
@@ -184,17 +184,17 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 16.38px;
+    margin-top: 15.56px; /* Reducido en un 5% */
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 8.28px 12.76px;
+    padding: 7.86px 12.12px; /* Reducido en un 5% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.82rem;
+    font-size: 0.78rem; /* Reducido en un 5% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -202,9 +202,9 @@ h1 {
 }
 
 .input-icon {
-    width: 1.23rem;
-    height: 1.23rem;
-    margin-right: 8.28px;
+    width: 1.17rem; /* Reducido en un 5% */
+    height: 1.17rem; /* Reducido en un 5% */
+    margin-right: 7.86px; /* Reducido en un 5% */
 }
 
 .footer {
@@ -238,64 +238,64 @@ h1 {
 @media (max-width: 767px) {
     .container {
         width: 90%;
-        max-width: 492px;
-        padding: 32.76px;
+        max-width: 467px;
+        padding: 31.12px;
     }
 
     h1 {
-        font-size: 2.04rem;
-        margin-bottom: 24.66px;
+        font-size: 1.94rem;
+        margin-bottom: 23.43px;
     }
 
     .input-section {
-        margin-bottom: 16.38px;
+        margin-bottom: 15.56px;
     }
 
     .input-section label {
-        font-size: 1.23rem;
+        font-size: 1.17rem;
     }
 
     .input-section input[type="number"],
     .input-section select {
-        padding: 10.92px 14.56px;
-        font-size: 0.984rem;
+        padding: 10.38px 13.83px;
+        font-size: 0.935rem;
     }
 
     .button-container {
-        margin-bottom: 16.38px;
+        margin-bottom: 15.56px;
     }
 
     .calculate-button,
     .clear-button {
-        padding: 10.92px 20.04px;
-        font-size: 0.984rem;
+        padding: 10.38px 19.04px;
+        font-size: 0.935rem;
     }
 
     .result-container {
-        max-height: 164px;
+        max-height: 156px;
     }
 
     .result-container pre {
-        font-size: 1.23rem;
+        font-size: 1.17rem;
     }
 
     .popup-content {
-        padding: 16.38px;
+        padding: 15.56px;
     }
 
     .popup-buttons {
-        margin-top: 16.38px;
+        margin-top: 15.56px;
     }
 
     .popup-buttons button {
-        padding: 8.28px 12.76px;
-        font-size: 0.82rem;
+        padding: 7.86px 12.12px;
+        font-size: 0.78rem;
     }
 
     .input-icon {
-        width: 1.23rem;
-        height: 1.23rem;
-        margin-right: 8.28px;
+        width: 1.17rem;
+        height: 1.17rem;
+        margin-right: 7.86px;
     }
 
     .footer {
@@ -310,13 +310,13 @@ h1 {
 /* Estilos para pantallas de 768px o más de ancho (tablets y desktops) */
 @media (min-width: 768px) {
     .container {
-        max-width: 800px;
-        padding: 40px;
+        max-width: 760px; /* Reducido en un 5% */
+        padding: 38px; /* Reducido en un 5% */
     }
 
     h1 {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
+        font-size: 2.38rem; /* Reducido en un 5% */
+        margin-bottom: 28.5px; /* Reducido en un 5% */
     }
 
     .input-section {
@@ -324,13 +324,13 @@ h1 {
     }
 
     .input-section label {
-        font-size: 1.5rem;
+        font-size: 1.43rem; /* Reducido en un 5% */
     }
 
     .input-section input[type="number"],
     .input-section select {
-        padding: 14px 18px;
-        font-size: 1.2rem;
+        padding: 13.3px 17.1px; /* Reducido en un 5% */
+        font-size: 1.14rem; /* Reducido en un 5% */
     }
 
     .button-container {
@@ -339,16 +339,16 @@ h1 {
 
     .calculate-button,
     .clear-button {
-        padding: 14px 24px;
-        font-size: 1.2rem;
+        padding: 13.3px 22.8px; /* Reducido en un 5% */
+        font-size: 1.14rem; /* Reducido en un 5% */
     }
 
     .result-container {
-        max-height: 200px;
+        max-height: 190px; /* Reducido en un 5% */
     }
 
     .result-container pre {
-        font-size: 1.5rem;
+        font-size: 1.43rem; /* Reducido en un 5% */
     }
 
     .popup-content {
@@ -365,8 +365,8 @@ h1 {
     }
 
     .input-icon {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.43rem; /* Reducido en un 5% */
+        height: 1.43rem; /* Reducido en un 5% */
         margin-right: 10px;
     }
 
