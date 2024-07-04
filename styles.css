@@ -286,6 +286,42 @@ h1 {
     margin: 0 10px;
     transition: color 0.3s ease;
 }
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .container {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+  
+  .input-section {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .input-section label {
+    margin-bottom: 5px;
+  }
+  
+  .input-section input[type="number"],
+  .input-section select {
+    width: 100%;
+  }
+  
+  .calculate-button {
+    margin-bottom: 20px;
+  }
+  
+  .result-container {
+    max-height: 150px;
+  }
+  
+  .popup-content {
+    width: 80%;
+    margin: 50% auto;
+  }
+}
 
 .social-icons a:hover {
     color: #2980b9;
