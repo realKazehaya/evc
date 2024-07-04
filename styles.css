@@ -29,7 +29,7 @@ body {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 24px;
+    font-size: 24px; /* Ajusta el tamaño del título para móviles */
 }
 
 @keyframes pulse {
@@ -46,14 +46,14 @@ body {
 
 .container {
     max-width: 600px;
-    width: 90%;
+    width: 90%; /* Ajusta el ancho del contenedor para móviles */
     background-color: #161b22;
-    padding: 20px;
+    padding: 20px; /* Reduce el padding para móviles */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
-    margin-top: 20px;
-    margin-bottom: 80px;
+    margin-top: 20px; /* Ajusta el margen superior para móviles */
+    margin-bottom: 80px; /* Ajusta el margen inferior para móviles */
 }
 
 @keyframes fadeIn {
@@ -69,40 +69,40 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Reduce el margen inferior para móviles */
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 20px;
+    font-size: 20px; /* Ajusta el tamaño del título para móviles */
 }
 
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Reduce el margen inferior para móviles */
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 16px;
+    font-size: 16px; /* Ajusta el tamaño de la etiqueta para móviles */
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 10px 14px;
+    padding: 10px 14px; /* Reduce el padding para móviles */
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
     -moz-appearance: textfield;
     -webkit-appearance: none;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
-    width: 100%;
+    width: 100%; /* Ajusta el ancho al 100% para móviles */
 }
 
 .input-section input[type="number"]::-webkit-inner-spin-button,
@@ -124,20 +124,20 @@ h1 {
 .calculate-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 20px; /* Reduce el padding para móviles */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 100%; /* Ajusta el ancho al 100% para móviles */
+    margin-bottom: 20px; /* Ajusta el margen inferior para móviles */
 }
 
 .result-container {
-    max-height: 150px;
+    max-height: 150px; /* Reduce la altura máxima para móviles */
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -160,7 +160,7 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 16px;
+    font-size: 16px; /* Ajusta el tamaño de la fuente para móviles */
 }
 
 .footer {
@@ -170,7 +170,7 @@ h1 {
     animation: fadeIn 0.5s ease-in-out;
     position: relative;
     bottom: 0;
-    margin-top: 20px;
+    margin-top: 20px; /* Ajusta el margen superior para móviles */
 }
 
 .footer-content {
@@ -184,7 +184,7 @@ h1 {
 
 .footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
 }
 
 .social-icons {
@@ -195,8 +195,8 @@ h1 {
 
 .social-icons a {
     color: #fff;
-    font-size: 20px;
-    margin: 0 8px;
+    font-size: 20px; /* Ajusta el tamaño de los iconos para móviles */
+    margin: 0 8px; /* Reduce el margen entre iconos para móviles */
     transition: color 0.3s ease;
 }
 
@@ -213,14 +213,11 @@ h1 {
 }
 
 .popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #161b22;
+    margin: 50% auto; /* Centra verticalmente el popup para móviles */
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 80%; /* Ajusta el ancho del popup para móviles */
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -234,95 +231,53 @@ h1 {
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 8px 16px;
+    padding: 8px 16px; /* Reduce el padding de los botones para móviles */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para móviles */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin: 0 8px;
+    margin: 0 8px; /* Reduce el margen entre botones para móviles */
 }
 
 .input-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
+    width: 18px; /* Reduce el tamaño del icono para móviles */
+    height: 18px; /* Reduce el tamaño del icono para móviles */
+    margin-right: 8px; /* Reduce el margen derecho del icono para móviles */
 }
+/**Movil**/
 
 @media (max-width: 767px) {
-  .container {
-    width: 90%;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 80px;
-  }
-  
-  .input-section {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  
-  .input-section label {
-    margin-bottom: 5px;
-  }
-  
-  .input-section input[type="number"],
-  .input-section select {
-    width: 100%;
-  }
-  
-  .calculate-button {
-    margin-bottom: 20px;
-  }
-  
-  .result-container {
-    max-height: 150px;
-  }
-  
-  .popup-content {
-    width: 80%;
-    margin: 50% auto;
-  }
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
 }
 
-@media (max-width: 480px) {
-  .header h1 {
-    font-size: 20px;
-  }
-  
-  h1 {
-    font-size: 18px;
-  }
-  
-  .input-section label {
-    font-size: 14px;
-  }
-  
-  .input-section input[type="number"],
-  .input-section select {
-    font-size: 12px;
-  }
-  
-  .calculate-button {
-    font-size: 12px;
-  }
-  
-  .result-container pre {
-    font-size: 14px;
-  }
-  
-  .footer p {
-    font-size: 12px;
-  }
-  
-  .social-icons a {
-    font-size: 18px;
-  }
-  
-  .popup-buttons button {
-    font-size: 10px;
-  }
+
+/**Tablet**/
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+
+/**Escritorio**/
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
 }
