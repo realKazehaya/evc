@@ -16,7 +16,7 @@ body {
 .header {
     background-color: #161b22;
     width: 100%;
-    padding: 20px 0;
+    padding: 30px 0; /* Aumenta el padding */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -29,7 +29,7 @@ body {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 24px; /* Ajusta el tamaño del título para móviles */
+    font-size: 2.5rem; /* Aumenta el tamaño del título */
 }
 
 @keyframes pulse {
@@ -45,15 +45,15 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 800px; /* Aumenta el ancho máximo */
     width: 90%; /* Ajusta el ancho del contenedor para móviles */
     background-color: #161b22;
-    padding: 20px; /* Reduce el padding para móviles */
+    padding: 30px; /* Aumenta el padding */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
-    margin-top: 20px; /* Ajusta el margen superior para móviles */
-    margin-bottom: 80px; /* Ajusta el margen inferior para móviles */
+    margin-top: 30px; /* Aumenta el margen superior */
+    margin-bottom: 100px; /* Aumenta el margen inferior */
 }
 
 @keyframes fadeIn {
@@ -69,35 +69,35 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px; /* Reduce el margen inferior para móviles */
+    margin-bottom: 30px; /* Aumenta el margen inferior */
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 20px; /* Ajusta el tamaño del título para móviles */
+    font-size: 2rem; /* Aumenta el tamaño del título */
 }
 
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Reduce el margen inferior para móviles */
+    margin-bottom: 30px; /* Aumenta el margen inferior */
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 16px; /* Ajusta el tamaño de la etiqueta para móviles */
+    font-size: 1.25rem; /* Aumenta el tamaño de la etiqueta */
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 10px 14px; /* Reduce el padding para móviles */
+    padding: 14px 18px; /* Aumenta el padding */
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
+    font-size: 1rem; /* Aumenta el tamaño de la fuente */
     -moz-appearance: textfield;
     -webkit-appearance: none;
     appearance: none;
@@ -125,20 +125,20 @@ h1 {
 .calculate-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 10px 20px; /* Reduce el padding para móviles */
+    padding: 14px 24px; /* Aumenta el padding */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
+    font-size: 1rem; /* Aumenta el tamaño de la fuente */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     width: 100%; /* Ajusta el ancho al 100% para móviles */
-    margin-bottom: 20px; /* Ajusta el margen inferior para móviles */
+    margin-bottom: 30px; /* Aumenta el margen inferior */
 }
 
 .result-container {
-    max-height: 150px; /* Reduce la altura máxima para móviles */
+    max-height: 200px; /* Aumenta la altura máxima */
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -161,17 +161,17 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 16px; /* Ajusta el tamaño de la fuente para móviles */
+    font-size: 1.25rem; /* Aumenta el tamaño de la fuente */
 }
 
 .footer {
     background-color: #161b22;
-    padding: 20px 0;
+    padding: 30px 0; /* Aumenta el padding */
     width: 100%;
     animation: fadeIn 0.5s ease-in-out;
     position: relative;
     bottom: 0;
-    margin-top: 20px; /* Ajusta el margen superior para móviles */
+    margin-top: 30px; /* Aumenta el margen superior */
 }
 
 .footer-content {
@@ -185,19 +185,19 @@ h1 {
 
 .footer p {
     margin: 0;
-    font-size: 14px; /* Ajusta el tamaño de la fuente para móviles */
+    font-size: 1rem; /* Aumenta el tamaño de la fuente */
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 14px; /* Aumenta el margen superior */
 }
 
 .social-icons a {
     color: #fff;
-    font-size: 20px; /* Ajusta el tamaño de los iconos para móviles */
-    margin: 0 8px; /* Reduce el margen entre iconos para móviles */
+    font-size: 1.5rem; /* Aumenta el tamaño de los iconos */
+    margin: 0 10px; /* Aumenta el margen entre iconos */
     transition: color 0.3s ease;
 }
 
@@ -216,7 +216,7 @@ h1 {
 
 .popup-content {
     background-color: #161b22;
-    padding: 10px; /* Reduce el padding */
+    padding: 20px; /* Aumenta el padding */
     margin: 0 auto; /* Centra el popup */
     border-radius: 10px;
     width: 80%; /* Ajusta el ancho del contenido */
@@ -227,27 +227,27 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 10px; /* Reduce el margen superior */
+    margin-top: 20px; /* Aumenta el margen superior */
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 6px 12px; /* Reduce el padding de los botones */
+    padding: 10px 16px; /* Aumenta el padding */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px; /* Ajusta el tamaño de la fuente de los botones */
+    font-size: 0.875rem; /* Aumenta el tamaño de la fuente */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin: 0 4px; /* Reduce el margen entre botones */
+    margin: 0 6px; /* Aumenta el margen entre botones */
 }
 
 .input-icon {
-    width: 16px; /* Reduce el tamaño del icono */
-    height: 16px; /* Reduce el tamaño del icono */
-    margin-right: 4px; /* Reduce el margen derecho del icono */
+    width: 1.25rem; /* Aumenta el tamaño del icono */
+    height: 1.25rem; /* Aumenta el tamaño del icono */
+    margin-right: 6px; /* Aumenta el margen derecho del icono */
 }
 
 /* Estilos para pantallas de hasta 767px de ancho (móviles) */
@@ -257,21 +257,21 @@ h1 {
         height: 90%; /* Ajusta el alto del popup para móviles */
     }
     .popup-content {
-        padding: 10px; /* Reduce el padding para móviles */
+        padding: 20px; /* Aumenta el padding para móviles */
         margin: 0 auto; /* Centra el popup para móviles */
         width: 90%; /* Ajusta el ancho del contenido para móviles */
     }
     .popup-buttons {
-        margin-top: 10px; /* Reduce el margen superior para móviles */
+        margin-top: 20px; /* Aumenta el margen superior para móviles */
     }
     .popup-buttons button {
-        padding: 6px 12px; /* Reduce el padding de los botones para móviles */
-        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para móviles */
+        padding: 10px 16px; /* Aumenta el padding de los botones para móviles */
+        font-size: 0.875rem; /* Aumenta el tamaño de la fuente de los botones para móviles */
     }
     .input-icon {
-        width: 14px; /* Reduce el tamaño del icono para móviles */
-        height: 14px; /* Reduce el tamaño del icono para móviles */
-        margin-right: 4px; /* Reduce el margen derecho del icono para móviles */
+        width: 1rem; /* Aumenta el tamaño del icono para móviles */
+        height: 1rem; /* Aumenta el tamaño del icono para móviles */
+        margin-right: 6px; /* Aumenta el margen derecho del icono para móviles */
     }
 }
 
@@ -282,21 +282,21 @@ h1 {
         height: 80%; /* Ajusta el alto del popup para tablets */
     }
     .popup-content {
-        padding: 10px; /* Reduce el padding para tablets */
+        padding: 20px; /* Aumenta el padding para tablets */
         margin: 0 auto; /* Centra el popup para tablets */
         width: 80%; /* Ajusta el ancho del contenido para tablets */
     }
     .popup-buttons {
-        margin-top: 10px; /* Reduce el margen superior para tablets */
+        margin-top: 20px; /* Aumenta el margen superior para tablets */
     }
     .popup-buttons button {
-        padding: 6px 12px; /* Reduce el padding de los botones para tablets */
-        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para tablets */
+        padding: 10px 16px; /* Aumenta el padding de los botones para tablets */
+        font-size: 0.875rem; /* Aumenta el tamaño de la fuente de los botones para tablets */
     }
     .input-icon {
-        width: 16px; /* Reduce el tamaño del icono para tablets */
-        height: 16px; /* Reduce el tamaño del icono para tablets */
-        margin-right: 4px; /* Reduce el margen derecho del icono para tablets */
+        width: 1.25rem; /* Aumenta el tamaño del icono para tablets */
+        height: 1.25rem; /* Aumenta el tamaño del icono para tablets */
+        margin-right: 6px; /* Aumenta el margen derecho del icono para tablets */
     }
 }
 
@@ -307,20 +307,20 @@ h1 {
         height: 70%; /* Ajusta el alto del popup para desktops */
     }
     .popup-content {
-        padding: 10px; /* Reduce el padding para desktops */
+        padding: 20px; /* Aumenta el padding para desktops */
         margin: 0 auto; /* Centra el popup para desktops */
         width: 70%; /* Ajusta el ancho del contenido para desktops */
     }
     .popup-buttons {
-        margin-top: 10px; /* Reduce el margen superior para desktops */
+        margin-top: 20px; /* Aumenta el margen superior para desktops */
     }
     .popup-buttons button {
-        padding: 6px 12px; /* Reduce el padding de los botones para desktops */
-        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para desktops */
+        padding: 10px 16px; /* Aumenta el padding de los botones para desktops */
+        font-size: 0.875rem; /* Aumenta el tamaño de la fuente de los botones para desktops */
     }
     .input-icon {
-        width: 18px; /* Reduce el tamaño del icono para desktops */
-        height: 18px; /* Reduce el tamaño del icono para desktops */
-        margin-right: 4px; /* Reduce el margen derecho del icono para desktops */
+        width: 1.5rem; /* Aumenta el tamaño del icono para desktops */
+        height: 1.5rem; /* Aumenta el tamaño del icono para desktops */
+        margin-right: 6px; /* Aumenta el margen derecho del icono para desktops */
     }
 }
