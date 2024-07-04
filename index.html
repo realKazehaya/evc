@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de EVO - Mutants Genetic Gladiators</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Calculadora de EVO</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="input-section">
+            <img src="https://i.ibb.co/qd9vDxL/qd9vDxL.png" alt="Evo Actual" class="input-icon">
+            <label for="CurrentEvo">EVO Actual:</label>
+            <input type="number" id="CurrentEvo" placeholder="Ingresa tu EVO actual" min="0" required>
+        </div>
+        
+        <div class="input-section">
+            <img src="https://i.ibb.co/KxHV5Lr/KxHV5Lr.png" alt="Créditos" class="input-icon">
+            <label for="Credits">Créditos:</label>
+            <input type="number" id="Credits" placeholder="Ingresa tus créditos" min="0" required>
+        </div>
+        
+        <div class="input-section">
+            <img src="https://i.ibb.co/HhJzS4G/HhJzS4G.png" alt="Oro" class="input-icon">
+            <label for="Gold">Oro:</label>
+            <input type="number" id="Gold" placeholder="Ingresa tu oro" min="0">
+        </div>
+        
+        <div class="input-section">
+            <img src="https://i.ibb.co/mc3Zw3Q/mc3Zw3Q.png" alt="Descuento" class="input-icon">
+            <label for="Discount">Descuento:</label>
+            <select id="Discount">
+                <option value="0">0%</option>
+                <option value="50">50%</option>
+                <option value="60">60%</option>
+                <option value="70">70%</option>
+                <option value="80">80%</option>
+                <option value="90">90%</option>
+            </select>
+        </div>
+        
+        <button onclick="doCalculate()" class="calculate-button">Calcular</button>
+        
+        <div id="result" class="result-container">
+            <pre id="result-text"></pre>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Morales</p>
+            <div class="social-icons">
+              <a href="https://wa.me/5555555555" target="_blank"><i class="fab fa-whatsapp"></i></a>
+              <a href="https://discord.gg/abcdefgh" target="_blank"><i class="fab fa-discord"></i></a>
+              <a href="https://www.facebook.com/mypage" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>¡Asegúrate de unirte al nuevo Discord!</h2>
+            <p>¡No te pierdas las últimas novedades y actualizaciones!</p>
+            <div class="popup-buttons">
+                <button onclick="joinDiscord()">Únete</button>
+                <button onclick="closePopup()">No, gracias</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/2b64d4f076.js" crossorigin="anonymous"></script>
+</body>
+</html>
