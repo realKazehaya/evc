@@ -17,8 +17,8 @@ body {
 .container {
     background-color: #161b22;
     width: 90%;
-    max-width: 600px;
-    padding: 40px;
+    max-width: 540px; /* Reducido en un 10% */
+    padding: 36px; /* Reducido en un 10% */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
@@ -42,8 +42,8 @@ h1 {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+    font-size: 2.25rem; /* Reducido en un 10% */
+    margin-bottom: 27px; /* Reducido en un 10% */
 }
 
 @keyframes pulse {
@@ -61,25 +61,25 @@ h1 {
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Reducido en un 10% */
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 1.5rem;
+    font-size: 1.35rem; /* Reducido en un 10% */
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 14px 18px;
+    padding: 12px 16px; /* Reducido en un 10% */
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.08rem; /* Reducido en un 10% */
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
@@ -107,20 +107,20 @@ h1 {
 .calculate-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 14px 24px;
+    padding: 12px 22px; /* Reducido en un 10% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.08rem; /* Reducido en un 10% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 18px; /* Reducido en un 10% */
 }
 
 .result-container {
-    max-height: 200px;
+    max-height: 180px; /* Reducido en un 10% */
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -143,7 +143,7 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 1.5rem;
+    font-size: 1.35rem; /* Reducido en un 10% */
 }
 
 .popup {
@@ -161,7 +161,7 @@ h1 {
 .popup-content {
     background-color: #161b22;
     margin: 50% auto;
-    padding: 20px;
+    padding: 18px; /* Reducido en un 10% */
     border-radius: 10px;
     width: 80%;
     text-align: center;
@@ -171,17 +171,17 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 18px; /* Reducido en un 10% */
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 10px 16px;
+    padding: 9px 14px; /* Reducido en un 10% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Reducido en un 10% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -189,7 +189,6 @@ h1 {
 }
 
 .input-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 10px;
-}
+    width: 1.35rem; /* Reducido en un 10% */
+    height: 1.35rem; /* Reducido en un 10% */
+    margin-right: 9px; /* Reducido en un 10% */
