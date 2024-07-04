@@ -14,6 +14,12 @@ body {
     overflow: hidden;
 }
 
+input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .container {
     background-color: #161b22;
     width: 90%;
@@ -112,7 +118,7 @@ h1 {
 }
 
 .discount-label {
-    margin-bottom: 5px; /* Agrega un margen inferior para separar el texto del botón */
+    margin-bottom: 5px;
 }
 
 .calculate-button,
@@ -132,7 +138,7 @@ h1 {
 
 .clear-button {
     background-color: #dc3545;
-    margin-top: 10px; /* Agrega un margen superior para separar los botones */
+    margin-top: 10px;
 }
 
 .result-container {
@@ -354,19 +360,19 @@ h1 {
     }
 
     .discount-label {
-        margin-bottom: 0; /* Elimina el margen inferior en desktops */
-        margin-right: 10px; /* Agrega un margen derecho para separar el texto del botón */
+        margin-bottom: 0;
+        margin-right: 10px;
     }
 
     .calculate-button,
     .clear-button {
         padding: 13.3px 22.8px;
         font-size: 1.14rem;
-        width: auto; /* Establece el ancho automático para los botones en desktops */
+        width: auto;
     }
 
     .clear-button {
-        margin-top: 0; /* Elimina el margen superior en desktops */
+        margin-top: 0;
     }
 
     .result-container {
