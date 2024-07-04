@@ -28,13 +28,13 @@ function doCalculate() {
     document.getElementById('result-text').innerText = "Nuevo EVO: " + String(result) + '\n Evos que subes: +' + String(result - startingEVO);
 }
 
-function closePopup() {
+function joinDiscord() {
     document.getElementById("popup").style.display = "none";
+    window.open("https://discord.gg/abcdefgh", "_blank");
 }
 
-// Mostrar el popup al cargar la página
-window.onload = function() {
-    document.getElementById("popup").style.display = "block";
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
 }
 function clearInputs() {
     document.getElementById("CurrentEvo").value = "";
