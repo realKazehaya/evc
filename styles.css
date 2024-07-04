@@ -17,8 +17,8 @@ body {
 .container {
     background-color: #161b22;
     width: 90%;
-    max-width: 540px; /* Reducido en un 10% */
-    padding: 36px; /* Reducido en un 10% */
+    max-width: 432px; /* Reducido en un 20% */
+    padding: 28.8px; /* Reducido en un 20% */
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
@@ -42,8 +42,8 @@ h1 {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 2.25rem; /* Reducido en un 10% */
-    margin-bottom: 27px; /* Reducido en un 10% */
+    font-size: 1.8rem; /* Reducido en un 20% */
+    margin-bottom: 21.6px; /* Reducido en un 20% */
 }
 
 @keyframes pulse {
@@ -61,25 +61,25 @@ h1 {
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 18px; /* Reducido en un 10% */
+    margin-bottom: 14.4px; /* Reducido en un 20% */
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 1.35rem; /* Reducido en un 10% */
+    font-size: 1.08rem; /* Reducido en un 20% */
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 12px 16px; /* Reducido en un 10% */
+    padding: 9.6px 12.8px; /* Reducido en un 20% */
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 1.08rem; /* Reducido en un 10% */
+    font-size: 0.864rem; /* Reducido en un 20% */
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
@@ -104,23 +104,33 @@ h1 {
     box-shadow: 0 0 20px rgba(88, 166, 255, 0.5);
 }
 
-.calculate-button {
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14.4px; /* Reducido en un 20% */
+}
+
+.calculate-button,
+.clear-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 12px 22px; /* Reducido en un 10% */
+    padding: 9.6px 17.6px; /* Reducido en un 20% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.08rem; /* Reducido en un 10% */
+    font-size: 0.864rem; /* Reducido en un 20% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    width: 100%;
-    margin-bottom: 18px; /* Reducido en un 10% */
+    width: 48%;
+}
+
+.clear-button {
+    background-color: #dc3545;
 }
 
 .result-container {
-    max-height: 180px; /* Reducido en un 10% */
+    max-height: 144px; /* Reducido en un 20% */
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -143,7 +153,7 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 1.35rem; /* Reducido en un 10% */
+    font-size: 1.08rem; /* Reducido en un 20% */
 }
 
 .popup {
@@ -161,7 +171,7 @@ h1 {
 .popup-content {
     background-color: #161b22;
     margin: 50% auto;
-    padding: 18px; /* Reducido en un 10% */
+    padding: 14.4px; /* Reducido en un 20% */
     border-radius: 10px;
     width: 80%;
     text-align: center;
@@ -171,17 +181,17 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 18px; /* Reducido en un 10% */
+    margin-top: 14.4px; /* Reducido en un 20% */
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 9px 14px; /* Reducido en un 10% */
+    padding: 7.2px 11.2px; /* Reducido en un 20% */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.9rem; /* Reducido en un 10% */
+    font-size: 0.72rem; /* Reducido en un 20% */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -189,6 +199,7 @@ h1 {
 }
 
 .input-icon {
-    width: 1.35rem; /* Reducido en un 10% */
-    height: 1.35rem; /* Reducido en un 10% */
-    margin-right: 9px; /* Reducido en un 10% */
+    width: 1.08rem; /* Reducido en un 20% */
+    height: 1.08rem; /* Reducido en un 20% */
+    margin-right: 7.2px; /* Reducido en un 20% */
+}
