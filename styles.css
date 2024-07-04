@@ -204,20 +204,21 @@ h1 {
     display: none;
     position: fixed;
     z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajusta el ancho del popup */
+    height: 80%; /* Ajusta el alto del popup */
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .popup-content {
     background-color: #161b22;
-    margin: 50% auto; /* Centra verticalmente el popup para móviles */
-    padding: 20px;
+    padding: 10px; /* Reduce el padding */
+    margin: 0 auto; /* Centra el popup */
     border-radius: 10px;
-    width: 80%; /* Ajusta el ancho del popup para móviles */
+    width: 80%; /* Ajusta el ancho del contenido */
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -225,59 +226,100 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px; /* Reduce el margen superior */
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 8px 16px; /* Reduce el padding de los botones para móviles */
+    padding: 6px 12px; /* Reduce el padding de los botones */
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para móviles */
+    font-size: 12px; /* Ajusta el tamaño de la fuente de los botones */
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin: 0 8px; /* Reduce el margen entre botones para móviles */
+    margin: 0 4px; /* Reduce el margen entre botones */
 }
 
 .input-icon {
-    width: 18px; /* Reduce el tamaño del icono para móviles */
-    height: 18px; /* Reduce el tamaño del icono para móviles */
-    margin-right: 8px; /* Reduce el margen derecho del icono para móviles */
+    width: 16px; /* Reduce el tamaño del icono */
+    height: 16px; /* Reduce el tamaño del icono */
+    margin-right: 4px; /* Reduce el margen derecho del icono */
 }
-/**Movil**/
 
+/* Estilos para pantallas de hasta 767px de ancho (móviles) */
 @media (max-width: 767px) {
-    .desktop {
-        display: none;
+    .popup {
+        width: 90%; /* Ajusta el ancho del popup para móviles */
+        height: 90%; /* Ajusta el alto del popup para móviles */
     }
-    .tablet {
-        display: none;
+    .popup-content {
+        padding: 10px; /* Reduce el padding para móviles */
+        margin: 0 auto; /* Centra el popup para móviles */
+        width: 90%; /* Ajusta el ancho del contenido para móviles */
+    }
+    .popup-buttons {
+        margin-top: 10px; /* Reduce el margen superior para móviles */
+    }
+    .popup-buttons button {
+        padding: 6px 12px; /* Reduce el padding de los botones para móviles */
+        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para móviles */
+    }
+    .input-icon {
+        width: 14px; /* Reduce el tamaño del icono para móviles */
+        height: 14px; /* Reduce el tamaño del icono para móviles */
+        margin-right: 4px; /* Reduce el margen derecho del icono para móviles */
     }
 }
 
-
-/**Tablet**/
-
+/* Estilos para pantallas de entre 768px y 990px de ancho (tablets) */
 @media (min-width: 768px) and (max-width: 990px) {
-    .desktop {
-        display: none;
+    .popup {
+        width: 80%; /* Ajusta el ancho del popup para tablets */
+        height: 80%; /* Ajusta el alto del popup para tablets */
     }
-    .movil {
-        display: none;
+    .popup-content {
+        padding: 10px; /* Reduce el padding para tablets */
+        margin: 0 auto; /* Centra el popup para tablets */
+        width: 80%; /* Ajusta el ancho del contenido para tablets */
+    }
+    .popup-buttons {
+        margin-top: 10px; /* Reduce el margen superior para tablets */
+    }
+    .popup-buttons button {
+        padding: 6px 12px; /* Reduce el padding de los botones para tablets */
+        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para tablets */
+    }
+    .input-icon {
+        width: 16px; /* Reduce el tamaño del icono para tablets */
+        height: 16px; /* Reduce el tamaño del icono para tablets */
+        margin-right: 4px; /* Reduce el margen derecho del icono para tablets */
     }
 }
 
-
-/**Escritorio**/
-
+/* Estilos para pantallas de más de 991px de ancho (desktops) */
 @media (min-width: 991px) {
-    .tablet {
-        display: none;
+    .popup {
+        width: 70%; /* Ajusta el ancho del popup para desktops */
+        height: 70%; /* Ajusta el alto del popup para desktops */
     }
-    .movil {
-        display: none;
+    .popup-content {
+        padding: 10px; /* Reduce el padding para desktops */
+        margin: 0 auto; /* Centra el popup para desktops */
+        width: 70%; /* Ajusta el ancho del contenido para desktops */
+    }
+    .popup-buttons {
+        margin-top: 10px; /* Reduce el margen superior para desktops */
+    }
+    .popup-buttons button {
+        padding: 6px 12px; /* Reduce el padding de los botones para desktops */
+        font-size: 12px; /* Ajusta el tamaño de la fuente de los botones para desktops */
+    }
+    .input-icon {
+        width: 18px; /* Reduce el tamaño del icono para desktops */
+        height: 18px; /* Reduce el tamaño del icono para desktops */
+        margin-right: 4px; /* Reduce el margen derecho del icono para desktops */
     }
 }
