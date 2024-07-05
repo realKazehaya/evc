@@ -33,17 +33,12 @@ function doCalculate() {
 }
 
 function joinDiscord() {
-    window.open("https://discord.com/invite/Dyc62fNHcz", "_blank");
+    window.open("https://discord.com/invite/TzAuKWvfwV", "_blank");
     closePopup();
 }
 
 function closePopup() {
     document.getElementById("popup").style.display = "none";
-}
-
-// Mostrar el popup al cargar la página
-window.onload = function() {
-    document.getElementById("popup").style.display = "block";
 }
 
 function clearInputs() {
