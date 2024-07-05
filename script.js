@@ -8,7 +8,6 @@ function doCalculate() {
 
     let result = 0;
     let startingEVO = userEVO;
-
     let increase = 0;
 
     if (userCreds === 0 && userGold === 0) {
@@ -17,14 +16,14 @@ function doCalculate() {
     }
 
     // Calcular Evos con Créditos
-    if (userCreds > 0) {
+    if (!isNaN(userCreds) && userCreds > 0) {
         let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
         let evosFromCredits = Math.floor(userCreds / creditsNeeded);
         result += evosFromCredits;
     }
 
     // Calcular Evos con Oro
-    if (userGold > 0) {
+    if (!isNaN(userGold) && userGold > 0) {
         let goldNeeded = 3000 * ((100 - Discount) * 0.01);
         increase = Math.floor(userGold / goldNeeded);
         result += increase;
