@@ -51,7 +51,7 @@ function doCalculate() {
     }
 
     result = result + increase;
-    document.getElementById('result').innerText = "NEW EVO: " + String(result) + '\n INCREASE: +' + String(result - startingEVO);
+    document.getElementById('result').innerText = "Nuevo Evo: " + String(result) + '\n Evos que subes: +' + String(result - startingEVO);
 }
 
 function clearInputs() {
