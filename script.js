@@ -19,7 +19,7 @@ function doCalculate() {
     if (userCreds > 0) {
         let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
         let evosFromCredits = Math.floor(userCreds / creditsNeeded);
-        result += evosFromCredits;
+        result = userEVO + evosFromCredits;
     }
 
     // Calcular Evos con Oro
