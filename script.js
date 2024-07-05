@@ -19,6 +19,8 @@ function doCalculate() {
     if (userCreds > 0) {
         let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
         let evosFromCredits = Math.floor(userCreds / creditsNeeded);
+        console.log(`Créditos necesarios para un EVO con ${Discount}% de descuento: ${creditsNeeded}`);
+        console.log(`Evos obtenidos con ${userCreds} créditos: ${evosFromCredits}`);
         result = userEVO + evosFromCredits;
     }
 
@@ -26,6 +28,8 @@ function doCalculate() {
     if (userGold > 0) {
         let goldNeeded = 3000 * ((100 - Discount) * 0.01);
         increase = Math.floor(userGold / goldNeeded);
+        console.log(`Oro necesario para un EVO con ${Discount}% de descuento: ${goldNeeded}`);
+        console.log(`Evos obtenidos con ${userGold} oro: ${increase}`);
         result += increase;
     }
 
@@ -42,6 +46,9 @@ Descuento: ${Discount}%
 Resultados:
 Nuevo EVO: ${result.toFixed(0)}
 Evos que subes: +${(result - startingEVO).toFixed(0)}
+
+Pasos de cálculo:
+${console.log}
 `;
 
     const blob = new Blob([resultData], { type: 'text/plain' });
@@ -53,6 +60,7 @@ Evos que subes: +${(result - startingEVO).toFixed(0)}
     link.click();
     document.body.removeChild(link);
 }
+
 
 function joinDiscord() {
     window.open("https://discord.com/invite/abcdefgh", "_blank");
