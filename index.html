@@ -1,41 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculadora de EVO - Mutants Genetic Gladiators</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="icono.png">
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icono.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <title>Calculadora de Evo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de EVO</h1>
-        
+        <h1>EVO Calculator</h1>
         <div class="input-section">
-            <img src="https://i.ibb.co/qd9vDxL/qd9vDxL.png" alt="Evo Actual" class="input-icon">
-            <label for="CurrentEvo">EVO Actual:</label>
-            <input type="number" id="CurrentEvo" placeholder="Ingresa tu EVO actual" min="0" required>
+            <img src="https://i.ibb.co/rQxwjCD/evo-icon.png" alt="EVO Icon" class="input-icon">
+            <label for="CurrentEvo">Evo Actual:</label>
+            <input type="number" id="CurrentEvo" placeholder="Introduzca su EVO actual" required>
         </div>
-        
         <div class="input-section">
-            <img src="https://i.ibb.co/KxHV5Lr/KxHV5Lr.png" alt="Créditos" class="input-icon">
+            <img src="https://i.ibb.co/4gvnXDL/credits-icon.png" alt="Credits Icon" class="input-icon">
             <label for="Credits">Créditos:</label>
-            <input type="number" id="Credits" placeholder="Ingresa tus créditos" min="0" required>
+            <input type="number" id="Credits" placeholder="Ingresa tus créditos" required>
         </div>
-        
         <div class="input-section">
-            <img src="https://i.ibb.co/HhJzS4G/HhJzS4G.png" alt="Oro" class="input-icon">
+            <img src="https://i.ibb.co/xhYdph5/gold-icon.png" alt="Gold Icon" class="input-icon">
             <label for="Gold">Oro:</label>
-            <input type="number" id="Gold" placeholder="Ingresa tu oro" min="0">
+            <input type="number" id="Gold" placeholder="Ingresa tu oro" required>
         </div>
-        
         <div class="input-section">
-            <img src="https://i.ibb.co/mc3Zw3Q/mc3Zw3Q.png" alt="Descuento" class="input-icon">
+            <img src="https://i.ibb.co/KrqPHLh/discount-icon.png" alt="Discount Icon" class="input-icon">
             <label for="Discount">Descuento:</label>
             <select id="Discount">
-                <option value="0">0%</option>
                 <option value="50">50%</option>
                 <option value="60">60%</option>
                 <option value="70">70%</option>
@@ -43,38 +38,23 @@
                 <option value="90">90%</option>
             </select>
         </div>
-        
         <div class="button-container">
-            <button onclick="doCalculate()" class="calculate-button">Calcular</button>
-            <button onclick="clearInputs()" class="clear-button">Borrar</button>
+            <button onclick="doCalculate()" class="calculate-button">Calculate</button>
+            <button onclick="clearInputs()" class="clear-button">Clear</button>
         </div>
-        
-        <div id="result" class="result-container">
-            <pre id="result-text"></pre>
-        </div>
-    </div>
-    
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <h2>¡Asegúrate de unirte al nuevo Discord!</h2>
-            <p>¡No te pierdas las últimas novedades y actualizaciones!</p>
-            <div class="popup-buttons">
-                <button onclick="joinDiscord()">Únete</button>
-                <button onclick="closePopup()">No, gracias</button>
-            </div>
+        <div class="result-container">
+            <pre id="result"></pre>
         </div>
     </div>
-    
-    <footer class="footer">
-        <p>&copy; 2024 Morales</p>
+    <div class="footer">
+        <span>Morales &copy; 2024 Calculadora Versión 1.0.0</span>
         <div class="social-icons">
-            <a href="https://discord.gg/TzAuKWvfwV" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="https://www.facebook.com/mcmillonario?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://web.facebook.com/mcmillonario?mibextid=LQQJ4d&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://discord.com/invite/TzAuKWvfwV"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/@Moralexs"><i class="fab fa-youtube"></i></a>
         </div>
-    </footer>
-    
+    </div>
     <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/2b64d4f076.js" crossorigin="anonymous"></script>
 </body>
 </html>
