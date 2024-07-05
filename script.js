@@ -15,21 +15,44 @@ function doCalculate() {
         return;
     }
 
-    // Calcular Evos con Créditos
-    if (!isNaN(userCreds) && userCreds > 0) {
-        let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
-        let evosFromCredits = Math.floor(userCreds / creditsNeeded);
-        result += evosFromCredits;
+    if (userEVO >= 328) {
+        result = userEVO + Math.floor(userCreds / (1590000000 * ((100 - Discount) * 0.01)));
+    } else {
+        while (userEVO < 328) {
+            if (userCreds >= creditsData[userEVO] * ((100 - Discount) * 0.01)) {
+                userCreds -= Math.floor(creditsData[userEVO] * ((100 - Discount) * 0.01));
+                userEVO++;
+            } else {
+                break;
+            }
+        }
+        result = userEVO;
     }
 
-    // Calcular Evos con Oro
-    if (!isNaN(userGold) && userGold > 0) {
-        let goldNeeded = 3000 * ((100 - Discount) * 0.01);
-        increase = Math.floor(userGold / goldNeeded);
-        result += increase;
+    if (result >= 30) {
+        increase = Math.floor(userGold / (3000 * ((100 - Discount) * 0.01)));
+    } else {
+        while (increase + result < 30) {
+            if (userGold >= goldData[result + increase] * ((100 - Discount) * 0.01)) {
+                userGold -= Math.round(goldData[result + increase] * ((100 - Discount) * 0.01));
+                increase++;
+            } else {
+                break;
+            }
+        }
     }
 
+    result = result + increase;
     document.getElementById('result-text').innerText = "Nuevo EVO: " + String(result) + '\n Evos que subes: +' + String(result - startingEVO);
+}
+
+function showRegistrationForm() {
+    window.location.href = "register.html";
+}
+
+function joinDiscord() {
+    window.open("https://discord.com/invite/Dyc62fNHcz", "_blank");
+    closePopup();
 }
 
 function closePopup() {
@@ -40,6 +63,7 @@ function closePopup() {
 window.onload = function() {
     document.getElementById("popup").style.display = "block";
 }
+
 
 function clearInputs() {
     document.getElementById("CurrentEvo").value = "";
