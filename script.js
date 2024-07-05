@@ -48,7 +48,10 @@ Nuevo EVO: ${result.toFixed(0)}
 Evos que subes: +${(result - startingEVO).toFixed(0)}
 
 Pasos de cálculo:
-${console.log}
+Créditos necesarios para un EVO con ${Discount}% de descuento: ${(1590000000 * ((100 - Discount) * 0.01)).toFixed(0)}
+Evos obtenidos con ${userCreds} créditos: ${Math.floor(userCreds / ((1590000000 * ((100 - Discount) * 0.01)))).toFixed(0)}
+Oro necesario para un EVO con ${Discount}% de descuento: ${(3000 * ((100 - Discount) * 0.01)).toFixed(0)}
+Evos obtenidos con ${userGold} oro: ${Math.floor(userGold / ((3000 * ((100 - Discount) * 0.01)))).toFixed(0)}
 `;
 
     const blob = new Blob([resultData], { type: 'text/plain' });
@@ -60,6 +63,7 @@ ${console.log}
     link.click();
     document.body.removeChild(link);
 }
+
 
 
 function joinDiscord() {
