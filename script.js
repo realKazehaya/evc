@@ -16,14 +16,18 @@ function doCalculate() {
     }
 
     // Calcular Evos con Créditos
-    let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
-    let evosFromCredits = Math.floor(userCreds / creditsNeeded);
-    result = userEVO + evosFromCredits;
+    if (!isNaN(userCreds) && userCreds > 0) {
+        let creditsNeeded = 1590000000 * ((100 - Discount) * 0.01);
+        let evosFromCredits = Math.floor(userCreds / creditsNeeded);
+        result += evosFromCredits;
+    }
 
     // Calcular Evos con Oro
-    let goldNeeded = 3000 * ((100 - Discount) * 0.01);
-    increase = Math.floor(userGold / goldNeeded);
-    result += increase;
+    if (!isNaN(userGold) && userGold > 0) {
+        let goldNeeded = 3000 * ((100 - Discount) * 0.01);
+        increase = Math.floor(userGold / goldNeeded);
+        result += increase;
+    }
 
     document.getElementById('result-text').innerText = "Nuevo EVO: " + String(result) + '\n Evos que subes: +' + String(result - startingEVO);
 }
@@ -36,6 +40,7 @@ function closePopup() {
 window.onload = function() {
     document.getElementById("popup").style.display = "block";
 }
+
 function clearInputs() {
     document.getElementById("CurrentEvo").value = "";
     document.getElementById("Credits").value = "";
