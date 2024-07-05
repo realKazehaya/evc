@@ -383,3 +383,13 @@ h1 {
         font-size: 1.5rem;
     }
 }
+.visitor-counter {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #58a6ff;
+}
+
+.visitor-counter span {
+    font-weight: bold;
+}
