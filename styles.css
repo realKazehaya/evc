@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
     font-family: 'Roboto', Arial, sans-serif;
@@ -14,17 +14,11 @@ body {
     overflow: hidden;
 }
 
-input, textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
 .container {
     background-color: #161b22;
     width: 90%;
-    max-width: 467px;
-    padding: 31.12px;
+    max-width: 492px;
+    padding: 32.76px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     animation: fadeIn 0.5s ease-in-out;
@@ -48,8 +42,8 @@ h1 {
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
-    font-size: 1.94rem;
-    margin-bottom: 23.43px;
+    font-size: 2.04rem;
+    margin-bottom: 24.66px;
 }
 
 @keyframes pulse {
@@ -67,25 +61,25 @@ h1 {
 .input-section {
     display: flex;
     align-items: center;
-    margin-bottom: 15.56px;
+    margin-bottom: 16.38px;
 }
 
 .input-section label {
     flex: 1;
     font-weight: bold;
     color: #58a6ff;
-    font-size: 1.17rem;
+    font-size: 1.23rem;
 }
 
 .input-section input[type="number"],
 .input-section select {
     flex: 2;
-    padding: 10.38px 13.83px;
+    padding: 10.92px 14.56px;
     border: none;
     border-radius: 6px;
     background-color: #2d333b;
     color: #ffffff;
-    font-size: 0.935rem;
+    font-size: 0.984rem;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: box-shadow 0.3s ease-in-out;
     width: 100%;
@@ -112,37 +106,31 @@ h1 {
 
 .button-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15.56px;
-}
-
-.discount-label {
-    margin-bottom: 5px;
+    justify-content: space-between;
+    margin-bottom: 16.38px;
 }
 
 .calculate-button,
 .clear-button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 10.38px 19.04px;
+    padding: 10.92px 20.04px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.935rem;
+    font-size: 0.984rem;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    width: 100%;
+    width: 48%;
 }
 
 .clear-button {
     background-color: #dc3545;
-    margin-top: 10px;
 }
 
 .result-container {
-    max-height: 156px;
+    max-height: 164px;
     overflow-y: auto;
     padding-right: 10px;
     animation: slideIn 0.5s ease-in-out;
@@ -165,7 +153,7 @@ h1 {
     word-wrap: break-word;
     color: #58a6ff;
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
-    font-size: 1.17rem;
+    font-size: 1.23rem;
 }
 
 .popup {
@@ -186,7 +174,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 15.56px;
+    padding: 16.38px;
     border-radius: 10px;
     width: 80%;
     text-align: center;
@@ -196,17 +184,17 @@ h1 {
 .popup-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 15.56px;
+    margin-top: 16.38px;
 }
 
 .popup-buttons button {
     background-color: #58a6ff;
     color: #ffffff;
-    padding: 7.86px 12.12px;
+    padding: 8.28px 12.76px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(88, 166, 255, 0.3);
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -214,9 +202,9 @@ h1 {
 }
 
 .input-icon {
-    width: 1.17rem;
-    height: 1.17rem;
-    margin-right: 7.86px;
+    width: 1.23rem;
+    height: 1.23rem;
+    margin-right: 8.28px;
 }
 
 .footer {
@@ -250,72 +238,64 @@ h1 {
 @media (max-width: 767px) {
     .container {
         width: 90%;
-        max-width: 467px;
-        padding: 31.12px;
+        max-width: 492px;
+        padding: 32.76px;
     }
 
     h1 {
-        font-size: 1.94rem;
-        margin-bottom: 23.43px;
+        font-size: 2.04rem;
+        margin-bottom: 24.66px;
     }
 
     .input-section {
-        margin-bottom: 15.56px;
+        margin-bottom: 16.38px;
     }
 
     .input-section label {
-        font-size: 1.17rem;
+        font-size: 1.23rem;
     }
 
     .input-section input[type="number"],
     .input-section select {
-        padding: 10.38px 13.83px;
-        font-size: 0.935rem;
+        padding: 10.92px 14.56px;
+        font-size: 0.984rem;
     }
 
     .button-container {
-        margin-bottom: 15.56px;
-    }
-
-    .discount-label {
-        margin-bottom: 5px;
+        margin-bottom: 16.38px;
     }
 
     .calculate-button,
     .clear-button {
-        padding: 10.38px 19.04px;
-        font-size: 0.935rem;
-    }
-
-    .clear-button {
-        margin-top: 10px;
+        padding: 10.92px 20.04px;
+        font-size: 0.984rem;
     }
 
     .result-container {
-        max-height: 156px;
+        max-height: 164px;
     }
 
     .result-container pre {
-        font-size: 1.17rem;
+        font-size: 1.23rem;
     }
 
     .popup-content {
-        padding: 15.56px;
+        padding: 16.38px;
     }
 
     .popup-buttons {
-        margin-top: 15.56px;
+        margin-top: 16.38px;
     }
 
     .popup-buttons button {
-        padding: 7.86px 12.12px;
-        font-size: 0.78rem;
+        padding: 8.28px 12.76px;
+        font-size: 0.82rem;
     }
 
     .input-icon {
-        width: 1.17rem;
-        height: 1.17rem;
-        margin-right: 7.86px;
+        width: 1.23rem;
+        height: 1.23rem;
+        margin-right: 8.28px;
     }
 
     .footer {
@@ -330,13 +310,13 @@ h1 {
 /* Estilos para pantallas de 768px o más de ancho (tablets y desktops) */
 @media (min-width: 768px) {
     .container {
-        max-width: 760px;
-        padding: 38px;
+        max-width: 800px;
+        padding: 40px;
     }
 
     h1 {
-        font-size: 2.38rem;
-        margin-bottom: 28.5px;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
     }
 
     .input-section {
@@ -344,43 +324,31 @@ h1 {
     }
 
     .input-section label {
-        font-size: 1.43rem;
+        font-size: 1.5rem;
     }
 
     .input-section input[type="number"],
     .input-section select {
-        padding: 13.3px 17.1px;
-        font-size: 1.14rem;
+        padding: 14px 18px;
+        font-size: 1.2rem;
     }
 
     .button-container {
         margin-bottom: 20px;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .discount-label {
-        margin-bottom: 0;
-        margin-right: 10px;
     }
 
     .calculate-button,
     .clear-button {
-        padding: 13.3px 22.8px;
-        font-size: 1.14rem;
-        width: auto;
-    }
-
-    .clear-button {
-        margin-top: 0;
+        padding: 14px 24px;
+        font-size: 1.2rem;
     }
 
     .result-container {
-        max-height: 190px;
+        max-height: 200px;
     }
 
     .result-container pre {
-        font-size: 1.43rem;
+        font-size: 1.5rem;
     }
 
     .popup-content {
@@ -397,8 +365,8 @@ h1 {
     }
 
     .input-icon {
-        width: 1.43rem;
-        height: 1.43rem;
+        width: 1.5rem;
+        height: 1.5rem;
         margin-right: 10px;
     }
 
