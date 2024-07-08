@@ -68,3 +68,8 @@ function updateVisitorCount() {
 }
 
 window.addEventListener('load', updateVisitorCount);
+function startDownload() {
+    // Aquí puedes agregar la lógica para iniciar la descarga
+    // Por ejemplo, redirigir al usuario a la URL de descarga
+    window.location.href = "https://download2444.mediafire.com/c05uc8arnwlg4QcH4kN_o4U2DODFaDRuxbasJeWKHWeZr4zokyc3GdSFrn4s77Z_GSuby_WFotds19GS2--7Cf5Kop7jtMsU1ddCy93JVIo-Fc5L8kgNv9eWOuc6T6DMK_zOqsvJmIctSFQjIrcMJO88KlmFK4TE3lH6zIi_OFaC/dva4ck4jvh5uf0q/base.apk";
+}
