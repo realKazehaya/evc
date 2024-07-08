@@ -47,6 +47,9 @@ body {
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -55,8 +58,10 @@ h1 {
     text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
     animation: pulse 2s infinite;
     font-size: 2.04rem;
+    margin-top: 20px;
     margin-bottom: 24.66px;
 }
+
 
 @keyframes pulse {
     0% {
