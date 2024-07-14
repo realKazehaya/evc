@@ -3,64 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="icono.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <title>Calculadora de Evo</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mutomania</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Calculadora de Evo</h1>
-        <div class="input-section">
-            <img src="https://i.ibb.co/rQxwjCD/evo-icon.png" alt="EVO Icon" class="input-icon">
-            <label for="CurrentEvo">Evo Actual:</label>
-            <input type="number" id="CurrentEvo" placeholder="Introduzca su EVO actual" required>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="#">Mutomania</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://mgg.autos/">Inicio</a></li>
+                    <li><a href="https://mgg.autos/emulador.html">Emulador</a></li>
+                    <li><a href="https://mgg.autos/calculadora.html">Calculadora</a></li>
+                    <li><a href="https://mgg.autos/secretos.html">Mutantes Secretos</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="input-section">
-            <img src="https://i.ibb.co/4gvnXDL/credits-icon.png" alt="Credits Icon" class="input-icon">
-            <label for="Credits">Créditos:</label>
-            <input type="number" id="Credits" placeholder="Ingresa tus créditos" required>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Prueba nuestra Calculadora de Evo</h1>
+                <p>Calcule fácilmente su EVO con nuestra potente herramienta.</p>
+                <a href="htts://mgg.autos/" class="cta-button">Pruébelo ahora</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <i class="fas fa-calculator"></i>
+                <h3>Cálculos precisos</h3>
+                <p>Nuestra calculadora proporciona cálculos EVO precisos.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Tenemos las Noticias más recientes del Juego</h3>
+                <p>Fuente de noticias seguro.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-user-shield"></i>
+                <h3>Seguro y fiable</h3>
+                <p>No recopilamos datos de nuestros usuarios.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024  Mutomania. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <div class="input-section">
-            <img src="https://i.ibb.co/xhYdph5/gold-icon.png" alt="Gold Icon" class="input-icon">
-            <label for="Gold">Oro:</label>
-            <input type="number" id="Gold" placeholder="Ingresa tu oro" required>
-        </div>
-        <div class="input-section">
-            <img src="https://i.ibb.co/KrqPHLh/discount-icon.png" alt="Discount Icon" class="input-icon">
-            <label for="Discount">Descuento:</label>
-            <select id="Discount">
-                <option value="0">0%</option>
-                <option value="50">50%</option>
-                <option value="60">60%</option>
-                <option value="70">70%</option>
-                <option value="80">80%</option>
-                <option value="90">90%</option>
-            </select>
-        </div>
-        <div class="button-container">
-            <button onclick="doCalculate()" class="calculate-button">Calculate</button>
-            <button onclick="clearInputs()" class="clear-button">Clear</button>
-        </div>
-        <div class="result-container">
-            <pre id="result"></pre>
-        </div>
-    </div>
-    <div class="footer">
-        <span>El apoyo que recibo en mis redes sociales me motiva a seguir creando contenido que sea de valor para ti. ¡Gracias por ser parte de esto!</span>
-        <span>Morales &copy; 2024 Calculadora Versión 1.0.0</span>
-        <div class="social-icons">
-            <a href="https://web.facebook.com/mcmillonario?mibextid=LQQJ4d&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://discord.com/invite/TzAuKWvfwV"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@Moralexs"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="visitor-counter">
-            <span>Visitantes: </span>
-            <span id="visitorCount">0</span>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    </footer>
 </body>
 </html>
