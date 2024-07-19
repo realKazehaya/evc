@@ -199,3 +199,18 @@ footer {
 .social-links a:hover {
     color: #58a6ff;
 }
+.cta-button {
+    display: inline-block;
+    background-color: #58a6ff;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
