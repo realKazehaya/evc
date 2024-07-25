@@ -173,8 +173,8 @@ modal.style.display = "none";
 function validateAndCalculate() {
 var currentLevel = parseInt(document.getElementById('current-level').value);
 var targetLevel = parseInt(document.getElementById('target-level').value);
-var xpPerFight = document.getElementById('xp-per-fight').value;
-var fightDuration = document.getElementById('fight-duration').value;
+var xpPerFight = parseFloat(document.getElementById('xp-per-fight').value);
+var fightDuration = parseFloat(document.getElementById('fight-duration').value);
 
 let valid = true;
 
@@ -193,14 +193,14 @@ valid = false;
 document.getElementById('target-warning').style.display = 'none';
 }
 
-if (xpPerFight < 0) {
+if (isNaN(xpPerFight) || xpPerFight < 0) {
 document.getElementById('xp-fight-warning').style.display = 'block';
 valid = false;
 } else {
 document.getElementById('xp-fight-warning').style.display = 'none';
 }
 
-if (fightDuration < 0) {
+if (isNaN(fightDuration) || fightDuration < 0) {
 document.getElementById('fight-duration-warning').style.display = 'block';
 valid = false;
 } else {
@@ -219,38 +219,38 @@ multiplier += parseInt(document.getElementById('xp-orbs' + i).getAttribute('data
 }
 
 var excess = 0;
-if(targetLevel > 177){
+if (targetLevel > 177) {
 excess = targetLevel - 177;
 targetLevel = 177;
 }
-const totalXP = (arr[targetLevel-1] - arr[currentLevel-1] + 81600*excess);
+const totalXP = (arr[targetLevel - 1] - arr[currentLevel - 1] + 81600 * excess);
 const xpRequired = 'XP total requerido: ' + totalXP.toLocaleString() + ' XP';
-var fights = 0;
 var output = document.getElementById('modal-text');
 var n = "\r\n";
 var final = xpRequired;
-let mult = 'Multiplicador de XP: ' + Math.round(multiplier/100 * 100)/100 + 'x';
+let mult = 'Multiplicador de XP: ' + Math.round(multiplier / 100 * 100) / 100 + 'x';
 final += n + mult;
-if(xpPerFight){
 
+if (!isNaN(xpPerFight) && xpPerFight > 0) {
 let xpBoosted = Math.floor(xpPerFight * (multiplier / 100));
 let xpWithBoost = 'XP ganada con potenciadores: ' + xpBoosted.toLocaleString() + ' XP';
-let fights = Math.ceil(totalXP/xpBoosted);
+let fights = Math.ceil(totalXP / xpBoosted);
 let numberOfFights = 'Número de combates: ' + fights.toLocaleString();
 final += n + xpWithBoost + n + numberOfFights;
-if(fightDuration){
-var time = fightDuration*fights;
-var hours = Math.floor(time/3600);
-var minutes = Math.floor((time-(hours*3600)) / 60);
+
+if (!isNaN(fightDuration) && fightDuration > 0) {
+var time = fightDuration * fights;
+var hours = Math.floor(time / 3600);
+var minutes = Math.floor((time - (hours * 3600)) / 60);
 var seconds = time - (hours * 3600) - (minutes * 60);
-if(hours < 10){
-hours = "0"+hours;
+if (hours < 10) {
+hours = "0" + hours;
 }
-if(minutes < 10){
-minutes = "0"+minutes;
+if (minutes < 10) {
+minutes = "0" + minutes;
 }
-if(seconds < 10){
-seconds = "0"+seconds;
+if (seconds < 10) {
+seconds = "0" + seconds;
 }
 let duration = 'Duración estimada: ' + hours + ':' + minutes + ':' + seconds;
 final += n + duration;
