@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de XP</title>
-    <link rel="stylesheet" href="styles/xp.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/misc/xp.png" alt="Ícono de XP">
+            <img src="https://mgg.autos/images/misc/xpadd.png" alt="Icono de XP">
             <h1>Calculadora</h1>
         </div>
         <form id="xp-form">
@@ -27,19 +27,22 @@
             <div class="form-group">
                 <label for="xp-orbs">Orbes de XP:</label>
                 <div class="xp-orbs-group">
-                    <div class="dropdown">
-                        <img src="images/misc/xpadd.png" id="xp-orbs1" style="width: 80px; height: auto;" data-value="0">
+                    <div class="dropdown" data-input-id="xp-orbs1">
+                        <img src="https://mgg.autos/images/misc/xpadd.png" id="xp-orbs1" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content" id="xp-orbs-dropdown1">
+                            <!-- Imágenes de orbes de XP se insertarán aquí dinámicamente -->
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <img src="images/misc/xpadd.png" id="xp-orbs2" style="width: 80px; height: auto;" data-value="0">
+                    <div class="dropdown" data-input-id="xp-orbs2">
+                        <img src="https://mgg.autos/images/misc/xpadd.png" id="xp-orbs2" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content middle" id="xp-orbs-dropdown2">
+                            <!-- Imágenes de orbes de XP se insertarán aquí dinámicamente -->
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <img src="images/misc/xpadd.png" id="xp-orbs3" style="width: 80px; height: auto;" data-value="0">
+                    <div class="dropdown" data-input-id="xp-orbs3">
+                        <img src="https://mgg.autos/images/misc/xpadd.png" id="xp-orbs3" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content right" id="xp-orbs-dropdown3">
+                            <!-- Imágenes de orbes de XP se insertarán aquí dinámicamente -->
                         </div>
                     </div>
                 </div>
@@ -56,14 +59,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="xp-per-fight">XP por Combate:</label>
+                <label for="xp-per-fight">XP por Lucha:</label>
                 <input type="number" id="xp-per-fight" name="xp-per-fight" min="0">
-                <span id="xp-fight-warning" class="warning" style="display: none;">XP por Combate no puede ser negativo.</span>
+                <span id="xp-fight-warning" class="warning" style="display: none;">El XP por Lucha no puede ser negativo.</span>
             </div>
             <div class="form-group">
-                <label for="fight-duration">Duración del Combate (segundos):</label>
+                <label for="fight-duration">Duración de la Lucha (segundos):</label>
                 <input type="number" id="fight-duration" name="fight-duration" min="0">
-                <span id="fight-duration-warning" class="warning" style="display: none;">La Duración del Combate no puede ser negativa.</span>
+                <span id="fight-duration-warning" class="warning" style="display: none;">La Duración de la Lucha no puede ser negativa.</span>
             </div>
             <button type="submit">Calcular</button>
         </form>
@@ -76,6 +79,6 @@
             <p id="modal-text"></p>
         </div>
     </div>
-    <script src="scripts/xp.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
