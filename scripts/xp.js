@@ -7,9 +7,9 @@ const xpPercent = [10, 40, 80, 120, 150, 200, 300, 0];
 for (let d = 1; d < 4; d++) {
     for (let i = 0; i < 8; i++) {
         const elem = document.createElement("img");
-        elem.setAttribute("src", xpImg + i + '.png');
+        elem.setAttribute("src", `${xpImg}${i}.png`);
         elem.setAttribute("data-value", xpPercent[i]);
-        document.getElementById("xp-orbs-dropdown" + d).appendChild(elem);
+        document.getElementById(`xp-orbs-dropdown${d}`).appendChild(elem);
     }
 }
 
@@ -21,62 +21,55 @@ function XPCalc(lvl) {
 
 // Función para validar y calcular los resultados
 function validateAndCalculate() {
-    const currentLevel = parseInt(document.getElementById('current-level').value);
-    const targetLevel = parseInt(document.getElementById('target-level').value);
-    const xpPerFight = document.getElementById('xp-per-fight').value;
-    const fightDuration = document.getElementById('fight-duration').value;
+    const currentLevel = parseInt(document.getElementById('current-level').value) || 0;
+    const targetLevel = parseInt(document.getElementById('target-level').value) || 0;
+    const xpPerFight = parseInt(document.getElementById('xp-per-fight').value) || 0;
+    const fightDuration = parseInt(document.getElementById('fight-duration').value) || 0;
     
-    const para = [currentLevel < 1, targetLevel <= currentLevel, xpPerFight < 0, fightDuration < 0];
+    const validations = [
+        currentLevel < 1,
+        targetLevel <= currentLevel,
+        xpPerFight < 0,
+        fightDuration < 0
+    ];
+
     const displayIDs = ['current-warning', 'target-warning', 'xp-fight-warning', 'fight-duration-warning'];
-    
-    const any = (arr, fn = Boolean) => arr.some(fn);
-    const invalid = any(para);
-    
-    for (let i = 0; i < 4; i++) {
-        document.getElementById(displayIDs[i]).style.display = para[i] ? 'block' : 'none';
-    }
-    
-    if (invalid) return;
+    validations.forEach((isInvalid, index) => {
+        document.getElementById(displayIDs[index]).style.display = isInvalid ? 'block' : 'none';
+    });
+
+    if (validations.some(Boolean)) return;
     
     const doubleXp = document.getElementById('double-xp').getAttribute('data-checked') === 'true';
     const tripleXp = document.getElementById('triple-xp').getAttribute('data-checked') === 'true';
     
-    let multiplier = 100 + doubleXp * 100 + tripleXp * 200;
-    for (let i = 1; i < 4; i++) {
-        multiplier += parseInt(document.getElementById('xp-orbs' + i).getAttribute('data-value'));
-    }
+    const xpOrbValues = [1, 2, 3].map(i => parseInt(document.getElementById(`xp-orbs${i}`).getAttribute('data-value')) || 0);
+    let multiplier = 100 + (doubleXp ? 100 : 0) + (tripleXp ? 200 : 0) + xpOrbValues.reduce((acc, val) => acc + val, 0);
     
     const totalXP = XPCalc(targetLevel) - XPCalc(currentLevel);
-    const xpRequired = 'XP total requerido: ' + totalXP.toLocaleString() + ' XP';
+    const xpRequired = `XP total requerido: ${totalXP.toLocaleString()} XP`;
+
+    let final = `${xpRequired}\r\nMultiplicador de XP: ${Math.round(multiplier) / 100}x`;
     let fights = 0;
-    const output = document.getElementById('modal-text');
-    const n = "\r\n";
-    let final = xpRequired;
-    
-    const mult = 'Multiplicador de XP: ' + Math.round(multiplier / 100 * 100) / 100 + 'x';
-    final += n + mult;
-    
-    if (xpPerFight) {
+
+    if (xpPerFight > 0) {
         const xpBoosted = Math.floor(xpPerFight * (multiplier / 100));
-        const xpWithBoost = 'XP ganado con aumentos: ' + xpBoosted.toLocaleString() + ' XP';
+        final += `\r\nXP ganado con aumentos: ${xpBoosted.toLocaleString()} XP`;
+
         fights = Math.ceil(totalXP / xpBoosted);
-        const numberOfFights = 'Número de combates: ' + fights.toLocaleString();
-        final += n + xpWithBoost + n + numberOfFights;
-        
-        if (fightDuration) {
-            const time = fightDuration * fights;
-            let hours = Math.floor(time / 3600);
-            let minutes = Math.floor((time - (hours * 3600)) / 60);
-            let seconds = time - (hours * 3600) - (minutes * 60);
+        final += `\r\nNúmero de combates: ${fights.toLocaleString()}`;
+
+        if (fightDuration > 0) {
+            const totalDuration = fightDuration * fights;
+            const hours = Math.floor(totalDuration / 3600).toString().padStart(2, '0');
+            const minutes = Math.floor((totalDuration % 3600) / 60).toString().padStart(2, '0');
+            const seconds = (totalDuration % 60).toString().padStart(2, '0');
             
-            hours = hours < 10 ? "0" + hours : hours;
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-            
-            final += n + 'Duración estimada: ' + hours + ':' + minutes + ':' + seconds;
+            final += `\r\nDuración estimada: ${hours}:${minutes}:${seconds}`;
         }
     }
-    
+
+    const output = document.getElementById('modal-text');
     output.style.whiteSpace = "pre";
     output.textContent = final;
     document.getElementById("resultModal").style.display = "block";
@@ -84,62 +77,44 @@ function validateAndCalculate() {
 
 // Función para alternar entre escala de grises y color
 function toggleGreyscale(img) {
-    if (img.getAttribute('data-checked') === 'false') {
-        img.style.filter = 'none';
-        img.setAttribute('data-checked', 'true');
-    } else {
-        img.style.filter = 'grayscale(100%)';
-        img.setAttribute('data-checked', 'false');
-    }
+    const isChecked = img.getAttribute('data-checked') === 'true';
+    img.style.filter = isChecked ? 'grayscale(100%)' : 'none';
+    img.setAttribute('data-checked', isChecked ? 'false' : 'true');
 }
 
 // Configurar eventos de la página
-document.addEventListener('DOMContentLoaded', function () {
-    const dropdowns = document.querySelectorAll('.dropdown');
-    
-    dropdowns.forEach(dropdown => {
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
         const dropdownContent = dropdown.querySelector('.dropdown-content');
         const dropdownImage = dropdown.querySelector('img');
-        
-        dropdownContent.addEventListener('click', function (event) {
+
+        dropdownContent.addEventListener('click', event => {
             if (event.target.tagName === 'IMG') {
                 const selectedValue = event.target.getAttribute('data-value');
                 dropdownImage.src = event.target.src;
                 dropdownContent.style.display = 'none';
                 dropdownImage.setAttribute('data-value', selectedValue);
                 
-                const inputId = dropdown.getAttribute('data-input-id');
-                const inputField = document.getElementById(inputId);
-                
+                const inputField = document.getElementById(dropdown.getAttribute('data-input-id'));
                 if (inputField) {
                     inputField.value = selectedValue;
                 }
             }
         });
-        
-        dropdown.addEventListener('mouseover', function () {
-            dropdownContent.style.display = 'block';
-        });
-        
-        dropdown.addEventListener('mouseout', function () {
-            dropdownContent.style.display = 'none';
-        });
+
+        dropdown.addEventListener('mouseover', () => dropdownContent.style.display = 'block');
+        dropdown.addEventListener('mouseout', () => dropdownContent.style.display = 'none');
     });
-    
-    document.getElementById('xp-form').addEventListener('submit', function (event) {
+
+    document.getElementById('xp-form').addEventListener('submit', event => {
         event.preventDefault();
         validateAndCalculate();
     });
-    
-    document.querySelector('.close').addEventListener('click', function () {
+
+    document.querySelector('.close').addEventListener('click', () => {
         document.getElementById("resultModal").style.display = "none";
     });
-    
-    const consumables = document.querySelectorAll('.consumable');
-    
-    consumables.forEach(consumable => {
-        consumable.addEventListener('click', function () {
-            toggleGreyscale(consumable);
-        });
+    document.querySelectorAll('.consumable').forEach(consumable => {
+        consumable.addEventListener('click', () => toggleGreyscale(consumable));
     });
 });
