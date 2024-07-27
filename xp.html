@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="images/misc/xp.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de XP</title>
-    <link rel="stylesheet" href="styles/xp.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/misc/xp.png" alt="Ícono de XP">
-            <h1>Calculadora</h1>
+            <img src="images/logo.png" alt="Logo">
+            <h1>Calculadora de XP</h1>
         </div>
+        
         <form id="xp-form">
             <div class="form-group">
                 <label for="current-level">Nivel Actual:</label>
-                <input type="number" id="current-level" name="current-level" min="1" required>
-                <span id="current-warning" class="warning" style="display: none;">El Nivel Actual debe ser al menos 1.</span>
+                <input type="number" id="current-level" min="1" required>
+                <div id="current-warning" class="warning" style="display:none;">Nivel actual no puede ser menor a 1.</div>
             </div>
+            
             <div class="form-group">
                 <label for="target-level">Nivel Objetivo:</label>
-                <input type="number" id="target-level" name="target-level" min="1" required>
-                <span id="target-warning" class="warning" style="display: none;">El Nivel Objetivo debe ser mayor que el Nivel Actual.</span>
+                <input type="number" id="target-level" min="1" required>
+                <div id="target-warning" class="warning" style="display:none;">Nivel objetivo debe ser mayor al nivel actual.</div>
             </div>
+            
             <div class="form-group">
-                <label for="xp-orbs">Orbes de XP:</label>
-                <div class="xp-orbs-group">
-                    <div class="dropdown">
-                        <img src="images/misc/xp7.png" id="xp-orbs1" style="width: 80px; height: auto;" data-value="0">
-                        <div class="dropdown-content" id="xp-orbs-dropdown1">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <img src="images/misc/xp7.png" id="xp-orbs2" style="width: 80px; height: auto;" data-value="0">
-                        <div class="dropdown-content middle" id="xp-orbs-dropdown2">
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <img src="images/misc/xp7.png" id="xp-orbs3" style="width: 80px; height: auto;" data-value="0">
-                        <div class="dropdown-content right" id="xp-orbs-dropdown3">
-                        </div>
-                    </div>
-                </div>
+                <label for="xp-per-fight">XP por Combate:</label>
+                <input type="number" id="xp-per-fight" min="0" required>
+                <div id="xp-fight-warning" class="warning" style="display:none;">XP por combate no puede ser negativo.</div>
             </div>
+            
+            <div class="form-group">
+                <label for="fight-duration">Duración del Combate (en segundos):</label>
+                <input type="number" id="fight-duration" min="0" required>
+                <div id="fight-duration-warning" class="warning" style="display:none;">La duración del combate no puede ser negativa.</div>
+            </div>
+            
             <div class="form-group">
                 <label>Consumibles:</label>
                 <div class="checkbox-group">
-                    <img src="images/misc/double.png" id="double-xp" class="consumable" data-checked="false">
-                    <label for="double-xp">Doble XP</label>
-                </div>
-                <div class="checkbox-group">
-                    <img src="images/misc/triple.png" id="triple-xp" class="consumable" data-checked="false">
-                    <label for="triple-xp">Triple XP</label>
+                    <img id="double-xp" src="images/consumables/double-xp.png" alt="Doble XP" data-checked="false" onclick="toggleGreyscale(this)">
+                    <img id="triple-xp" src="images/consumables/triple-xp.png" alt="Triple XP" data-checked="false" onclick="toggleGreyscale(this)">
                 </div>
             </div>
+
             <div class="form-group">
-                <label for="xp-per-fight">XP por Combate:</label>
-                <input type="number" id="xp-per-fight" name="xp-per-fight" min="0">
-                <span id="xp-fight-warning" class="warning" style="display: none;">XP por Combate no puede ser negativo.</span>
+                <label>Orbes de XP:</label>
+                <div id="xp-orbs-dropdown1" class="dropdown">
+                    <img id="xp-orbs1" src="images/misc/xp0.png" data-value="10">
+                    <div class="dropdown-content"></div>
+                </div>
+                <div id="xp-orbs-dropdown2" class="dropdown">
+                    <img id="xp-orbs2" src="images/misc/xp0.png" data-value="10">
+                    <div class="dropdown-content"></div>
+                </div>
+                <div id="xp-orbs-dropdown3" class="dropdown">
+                    <img id="xp-orbs3" src="images/misc/xp0.png" data-value="10">
+                    <div class="dropdown-content"></div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="fight-duration">Duración del Combate (segundos):</label>
-                <input type="number" id="fight-duration" name="fight-duration" min="0">
-                <span id="fight-duration-warning" class="warning" style="display: none;">La Duración del Combate no puede ser negativa.</span>
-            </div>
+
             <button type="submit">Calcular</button>
         </form>
-        <br>
-        <footer>Sitio por Morales Todos los Derechos Reservados ©</footer>
     </div>
+
+    <!-- Modal -->
     <div id="resultModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="modal-text"></p>
+            <pre id="modal-text"></pre>
         </div>
     </div>
-    <script src="scripts/xp.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
