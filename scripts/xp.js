@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (doubleXp) xpNeeded *= 2;
         if (tripleXp) xpNeeded *= 3;
 
-        let resultText = `You need ${xpNeeded} XP to reach level ${targetLevel}.`;
+        let resultText = `Necesitas ${xpNeeded} XP para alcanzar el nivel ${targetLevel}.`;
         if (fightDuration > 0) {
             let fightsNeeded = Math.ceil(xpNeeded / xpPerFight);
             let totalTime = fightsNeeded * fightDuration;
             let minutes = Math.floor(totalTime / 60);
             let seconds = totalTime % 60;
-            resultText += ` This will take approximately ${minutes} minutes and ${seconds} seconds.`;
+            resultText += ` Esto tomará aproximadamente ${minutes} minutos y ${seconds} segundos.`;
         }
 
         showResult(resultText);
