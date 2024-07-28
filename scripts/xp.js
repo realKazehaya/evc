@@ -9,8 +9,10 @@ function populateDropdown(dropdownId, max) {
         img.dataset.value = value;
         img.alt = `${value} XP`;
         img.onclick = () => {
-            document.getElementById(dropdownId.slice(0, -10)).dataset.value = value;
-            dropdown.style.display = 'none';
+            const orbElement = document.getElementById(dropdownId.slice(0, -10));
+            orbElement.dataset.value = value;
+            orbElement.src = img.src; // Actualiza la imagen del orbe
+            dropdown.style.display = 'none'; // Cierra el dropdown
         };
         dropdown.appendChild(img);
     });
