@@ -192,3 +192,29 @@ footer {
     bottom: 0;
     font-weight: normal; /* Texto normal sin negrita */
 }
+
+/* Estilo para los botones */
+button {
+    background-color: #bc87eb; /* Color de fondo morado */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 12px 20px; /* Padding ajustado */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+    width: 100%; /* Botón de ancho completo */
+    text-align: center;
+    font-weight: bold; /* Texto en negrita */
+    margin-top: 10px; /* Margen superior */
+}
+
+/* Estilo para el botón al pasar el cursor */
+button:hover {
+    background-color: #a573c2; /* Color de fondo morado más oscuro */
+}
+
+/* Estilo para el botón al hacer clic */
+button:active {
+    background-color: #8a4b9c; /* Color de fondo morado aún más oscuro */
+}
