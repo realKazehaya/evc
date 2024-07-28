@@ -108,19 +108,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         const totalXP = XPCalc(targetLevel) - XPCalc(currentLevel);
-        const xpRequired = 'Total XP required: ' + totalXP.toLocaleString() + ' XP';
+        const xpRequired = 'XP total requerido: ' + totalXP.toLocaleString() + ' XP';
         let fights = 0;
         let output = document.getElementById('modal-text');
         let n = "\r\n";
         let final = xpRequired;
-        let mult = 'XP Multiplier: ' + Math.round(multiplier / 100 * 100) / 100 + 'x';
+        let mult = 'Multiplicador de XP: ' + Math.round(multiplier / 100 * 100) / 100 + 'x';
         final += n + mult;
 
         if (xpPerFight) {
             const xpBoosted = Math.floor(xpPerFight * (multiplier / 100));
-            const xpWithBoost = 'XP earned with boosts: ' + xpBoosted.toLocaleString() + ' XP';
+            const xpWithBoost = 'XP ganado con potenciadores: ' + xpBoosted.toLocaleString() + ' XP';
             fights = Math.ceil(totalXP / xpBoosted);
-            const numberOfFights = 'Number of fights: ' + fights.toLocaleString();
+            const numberOfFights = 'Número de peleas: ' + fights.toLocaleString();
             final += n + xpWithBoost + n + numberOfFights;
 
             if (fightDuration) {
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const hours = Math.floor(time / 3600);
                 const minutes = Math.floor((time - (hours * 3600)) / 60);
                 const seconds = time - (hours * 3600) - (minutes * 60);
-                final += n + 'Estimated duration: ' + [hours, minutes, seconds].map(num => num < 10 ? '0' + num : num).join(':');
+                final += n + 'Duración estimada: ' + [hours, minutes, seconds].map(num => num < 10 ? '0' + num : num).join(':');
             }
         }
 
