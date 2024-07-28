@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createDropdownContent(dropdown, targetImg) {
         xpOrbsOptions.forEach(value => {
             const img = document.createElement('img');
-            img.src = "main/images/misc/xp7.png";
+            img.src = "images/misc/xp7.png";
             img.dataset.value = value;
             img.alt = `${value} XP`;
             img.addEventListener('click', () => {
