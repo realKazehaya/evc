@@ -1,1 +1,116 @@
-(function(_0x3f0a,_0x5e7e){const _0x3b54=['log','textContent','setAttribute','getAttribute','style','display','none','block','whiteSpace','pre','addEventListener','click','forEach','querySelectorAll','querySelector','preventDefault','value','textContent','show','hide','classList','toggle','data-value','data-checked','src','images/misc/xp','getElementById','current-level','target-level','xp-per-fight','fight-duration','double-xp','triple-xp','xp-orbs','resultModal','modal-text','current-warning','target-warning','xp-fight-warning','fight-duration-warning','close','consumable','xp-orbs-dropdown'];(function(_0x2b16c2){return function(_0x2a49b0){return _0x2b16c2[_0x2a49b0];};})(_0x3b54);const _0x4a2a=[0,5,125,265,425,785,1385,2265,3225,4395,5795,7295,9055,10925,13085,15555,18155,20885,23965,27185,30785,34535,38695,43015,47495,52425,57525,63105,68865,74805,81265,87915,94755,102155,109755,117555,125955,134565,143385,152905,162595,172540,183340,194320,205570,217000,229000,241240,253720,266970,280470,294220,308220,323040,338140,353480,369080,385775,402680,419900,438160,456750,475230,494370,513840,533850,554150,574740,595620,617520,639720,663120,686880,711880,737255,763905,790945,819430,848185,878425,908945,940990,973470,1007370,1041720,1077525,1113795,1151715,1189955,1229885,1270145,1312135,1354635,1397475,1442100,1487075,1532575,1579915,1627615,1675855,1725805,1776310,1827370,1878800,1930785,1983140,2036050,2089515,2143350,2197740,2252500,2307815,2363685,2419925,2476720,2533885,2591605,2649880,2708525,2767725,2827295,2887420,2948100,3009150,3070755,3134405,3198625,3263415,3328585,3394325,3460445,3527135,3594395,3662035,3730245,3798835,3867995,3937725,4007835,4078515,4149575,4221205,4293405,4365985,4439135,4512665,4586765,4661435,4736485,4812105,4888105,4966690,5045860,5125420,5204980,5284540,5364100,5443660,5523220,5602780,5682340,5761900,5841460,5921020,6000580,6080140,6159700,6239260,6318820,6398380,6477940,6557500,6637060,6716620,6796180,6875740,6957340];const _0x49e0="images/misc/xp";const _0x5a4c=[10,40,80,120,150,200,300,0];for(let _0x590d=1;_0x590d<4;_0x590d++){for(let _0x1b35=0;_0x1b35<8;_0x1b35++){const _0x2b06=document[_0x3b54[66]](`xp-orbs-dropdown${_0x590d}`);const _0x5b53=document[_0x3b54[73]](_0x3b54[73]);_0x5b53[_0x3b54[24]](_0x3b54[70],`${_0x49e0}${_0x1b35}.png`);_0x5b53[_0x3b54[24]](_0x3b54[66],_0x5a4c[_0x1b35]);_0x2b06[_0x3b54[68]](_0x5b53);}}function _0x3208(_0x26d5){const _0x4bfc=_0x26d5-177;return(_0x4bfc>0)?_0x4a2a[176]+_0x4bfc*81600:_0x4a2a[_0x26d5-1];}function _0x1716(){const _0x1d69=parseInt(document[_0x3b54[66]]('current-level')[_0x3b54[64]])||0;const _0x4ea7=parseInt(document[_0x3b54[66]]('target-level')[_0x3b54[64]])||0;const _0x2b2e=parseInt(document[_0x3b54[66]]('xp-per-fight')[_0x3b54[64]])||0;const _0x536c=parseInt(document[_0x3b54[66]]('fight-duration')[_0x3b54[64]])||0;const _0x19d2=[_0x1d69<1,_0x4ea7<=_0x1d69,_0x2b2e<0,_0x536c<0];const _0x590b=['current-warning','target-warning','xp-fight-warning','fight-duration-warning'];_0x19d2[_0x3b54[79]]((_0x53e5,_0x1b58)=>{document[_0x3b54[66]](_0x590b[_0x1b58])[_0x3b54[37]]=_0x53e5?_0x3b54[72]:_0x3b54[71];});if(_0x19d2[_0x3b54[12]](Boolean))return;const _0x1a60=document[_0x3b54[66]]('double-xp')[_0x3b54[65]]===_0x3b54[85];const _0x4a12=document[_0x3b54[66]]('triple-xp')[_0x3b54[65]]===_0x3b54[85];const _0x44f8=[1,2,3][_0x3b54[79]](_0x26d5=>parseInt(document[_0x3b54[66]](`xp-orbs${_0x26d5}`)[_0x3b54[65]])||0);let _0x26e4=100+(_0x1a60?100:0)+(_0x4a12?200:0)+_0x44f8[_0x3b54[89]]((_0x2b4f,_0x22d2)=>_0x2b4f+_0x22d2,0);const _0x1859=_0x3208(_0x4ea7)-_0x3208(_0x1d69);const _0x1d26=`XP total requerido: ${_0x1859[_0x3b54[43]]()} XP`;let _0x4666=`${_0x1d26}\r\nMultiplicador de XP: ${Math[_0x3b54[26]](_0x26e4)/100}x`;let _0x3ae2=0;if(_0x2b2e>0){const _0x11a2=Math[_0x3b54[5]](_0x2b2e*(_0x26e4/100));_0x4666+=`\r\nXP ganado con aumentos: ${_0x11a2[_0x3b54[43]]()} XP`;_0x3ae2=Math[_0x3b54[8]](_0x1859/_0x11a2);_0x4666+=`\r\nNúmero de combates: ${_0x3ae2[_0x3b54[43]]()}`;if(_0x536c>0){const _0x2064=_0x536c*_0x3ae2;const _0x2052=Math[_0x3b54[5]](_0x2064/3600)[_0x3b54[40]](2,'0');const _0x2204=Math[_0x3b54[5]]((_0x2064%3600)/60)[_0x3b54[40]](2,'0');const _0x511e=(_0x2064%60)[_0x3b54[40]](2,'0');_0x4666+=`\r\nDuración estimada: ${_0x2052}:${_0x2204}:${_0x511e}`;}const _0x4721=document[_0x3b54[66]]('modal-text');_0x4721[_0x3b54[35]]=_0x3b54[84];_0x4721[_0x3b54[29]]=_0x4666;document[_0x3b54[66]](_0x3b54[77])[_0x3b54[37]]=_0x3b54[78];}function _0x1c95(_0x2a43){const _0x2b16=_0x2a43[_0x3b54[65]]===_0x3b54[85];_0x2a43[_0x3b54[4]]=_0x2b16?_0x3b54[92]:_0x3b54[94];_0x2a43[_0x3b54[24]](_0x3b54[66],_0x2b16?_0x3b54[95]:_0x3b54[85]);}document[_0x3b54[85]](_0x3b54[91],()=>{document[_0x3b54[72]]('.dropdown')[_0x3b54[79]](_0x2a44=>{const _0x5866=_0x2a44[_0x3b54[7]]('.dropdown-content');const _0x56b6=_0x2a44[_0x3b54[7]]('img');_0x5866[_0x3b54[82]](_0x3b54[24],_0x2a34=>{if(_0x2a34[_0x3b54[63]]==='IMG'){const _0x2846=_0x2a34[_0x3b54[65]];_0x56b6[_0x3b54[24]]=_0x2a34[_0x3b54[24]];_0x5866[_0x3b54[37]]=_0x3b54[71];_0x56b6[_0x3b54[24]](_0x3b54[66],_0x2846);const _0x55e6=document[_0x3b54[66]](_0x2a44[_0x3b54[65]]);if(_0x55e6){_0x55e6[_0x3b54[24]]=_0x2846;}}});_0x2a44[_0x3b54[82]](_0x3b54[60],()=>_0x5866[_0x3b54[37]]=_0x3b54[78]);_0x2a44[_0x3b54[83]](()=>_0x5866[_0x3b54[37]]=_0x3b54[71]);});document[_0x3b54[66]]('xp-form')[_0x3b54[22]](_0x2b34=>{_0x2b34[_0x3b54[43]]();_0x1716();});document[_0x3b54[72]]('.close')[_0x3b54[82]](()=>document[_0x3b54[66]](_0x3b54[77])[_0x3b54[37]]=_0x3b54[71]);document[_0x3b54[72]]('.consumable')[_0x3b54[82]](_0x2b34=>_0x1c95(_0x2b34));});
+document.addEventListener('DOMContentLoaded', () => {
+    const xpOrbs1 = document.getElementById('xp-orbs1');
+    const xpOrbs2 = document.getElementById('xp-orbs2');
+    const xpOrbs3 = document.getElementById('xp-orbs3');
+    const xpOrbsDropdown1 = document.getElementById('xp-orbs-dropdown1');
+    const xpOrbsDropdown2 = document.getElementById('xp-orbs-dropdown2');
+    const xpOrbsDropdown3 = document.getElementById('xp-orbs-dropdown3');
+
+    const xpOrbsOptions = [1, 5, 10, 20, 50, 100];
+
+    function createDropdownContent(dropdown, targetImg) {
+        xpOrbsOptions.forEach(value => {
+            const img = document.createElement('img');
+            img.src = "main/images/misc/xp7.png";
+            img.dataset.value = value;
+            img.alt = `${value} XP`;
+            img.addEventListener('click', () => {
+                targetImg.dataset.value = value;
+                targetImg.src = img.src;
+                dropdown.style.display = 'none';
+            });
+            dropdown.appendChild(img);
+        });
+    }
+
+    createDropdownContent(xpOrbsDropdown1, xpOrbs1);
+    createDropdownContent(xpOrbsDropdown2, xpOrbs2);
+    createDropdownContent(xpOrbsDropdown3, xpOrbs3);
+
+    const consumables = document.querySelectorAll('.consumable');
+    consumables.forEach(consumable => {
+        consumable.addEventListener('click', () => {
+            const isChecked = consumable.dataset.checked === 'true';
+            consumable.dataset.checked = isChecked ? 'false' : 'true';
+            consumable.style.filter = isChecked ? 'grayscale(100%)' : 'none';
+        });
+    });
+
+    const form = document.getElementById('xp-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const currentLevel = parseInt(document.getElementById('current-level').value);
+        const targetLevel = parseInt(document.getElementById('target-level').value);
+        const xpOrbs1Value = parseInt(xpOrbs1.dataset.value);
+        const xpOrbs2Value = parseInt(xpOrbs2.dataset.value);
+        const xpOrbs3Value = parseInt(xpOrbs3.dataset.value);
+        const xpPerFight = parseInt(document.getElementById('xp-per-fight').value) || 0;
+        const fightDuration = parseInt(document.getElementById('fight-duration').value) || 0;
+
+        let doubleXp = document.getElementById('double-xp').dataset.checked === 'true';
+        let tripleXp = document.getElementById('triple-xp').dataset.checked === 'true';
+
+        if (targetLevel <= currentLevel) {
+            document.getElementById('target-warning').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('target-warning').style.display = 'none';
+        }
+
+        if (currentLevel < 1) {
+            document.getElementById('current-warning').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('current-warning').style.display = 'none';
+        }
+
+        if (xpPerFight < 0) {
+            document.getElementById('xp-fight-warning').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('xp-fight-warning').style.display = 'none';
+        }
+
+        if (fightDuration < 0) {
+            document.getElementById('fight-duration-warning').style.display = 'block';
+            return;
+        } else {
+            document.getElementById('fight-duration-warning').style.display = 'none';
+        }
+
+        let xpNeeded = (targetLevel - currentLevel) * (xpPerFight + xpOrbs1Value + xpOrbs2Value + xpOrbs3Value);
+        if (doubleXp) xpNeeded *= 2;
+        if (tripleXp) xpNeeded *= 3;
+
+        let resultText = `You need ${xpNeeded} XP to reach level ${targetLevel}.`;
+        if (fightDuration > 0) {
+            let fightsNeeded = Math.ceil(xpNeeded / xpPerFight);
+            let totalTime = fightsNeeded * fightDuration;
+            let minutes = Math.floor(totalTime / 60);
+            let seconds = totalTime % 60;
+            resultText += ` This will take approximately ${minutes} minutes and ${seconds} seconds.`;
+        }
+
+        showResult(resultText);
+    });
+
+    function showResult(text) {
+        const modal = document.getElementById('resultModal');
+        const modalText = document.getElementById('modal-text');
+        const closeBtn = document.querySelector('.close');
+
+        modalText.textContent = text;
+        modal.style.display = 'block';
+
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    }
+});
