@@ -21,8 +21,17 @@ button {
 button:hover {
     background-color: #a76edc;
 }
-footer{
+footer {
+    background-color: #1e1e1e; /* Fondo oscuro para pie de página */
+    color: #a76edc; /* Azul eléctrico */
     text-align: center;
+    padding: 15px; /* Padding ajustado */
+    border-top: 2px solid #a76edc; /* Azul eléctrico */
+    font-size: 16px; /* Tamaño del texto ajustado */
+    width: 100%;
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0;
+    font-weight: normal; /* Texto normal sin negrita */
 }
 .container {
     background-color: #20232a;
