@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Rellenar los menús desplegables con imágenes de orbes de XP
     const xpImgUrls = [
-        'images/misc/xp0.png',
-        'images/misc/xp1.png',
-        'images/misc/xp2.png',
-        'images/misc/xp3.png',
-        'images/misc/xp4.png',
-        'images/misc/xp5.png',
-        'images/misc/xp6.png',
-        'images/misc/xp7.png'
+        'https://mgg.autos/images/misc/xp0.png',
+        'https://mgg.autos/images/misc/xp1.png',
+        'https://mgg.autos/images/misc/xp2.png',
+        'https://mgg.autos/images/misc/xp3.png',
+        'https://mgg.autos/images/misc/xp4.png',
+        'https://mgg.autos/images/misc/xp5.png',
+        'https://mgg.autos/images/misc/xp6.png',
+        'https://mgg.autos/images/misc/xp7.png'
     ];
     const xpPercent = [0, 10, 20, 30, 40, 50, 60, 70];
 
