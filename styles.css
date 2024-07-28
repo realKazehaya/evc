@@ -11,10 +11,12 @@ body {
     background-color: #282c34; /* Fondo oscuro */
     color: #fff;
     display: flex;
+    flex-direction: column; /* Permite al footer estar al final del contenido */
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding-bottom: 60px; /* Espacio para el footer fijo */
 }
 
 /* Estilo para el contenedor principal */
@@ -137,3 +139,15 @@ input[type="number"] {
 }
 
 /* Estilo para el pie de página */
+footer {
+    background-color: #1e1e1e; /* Fondo oscuro para pie de página */
+    color: #00aaff; /* Azul eléctrico */
+    text-align: center;
+    padding: 15px; /* Padding ajustado */
+    border-top: 2px solid #00aaff; /* Azul eléctrico */
+    font-size: 16px; /* Tamaño del texto ajustado */
+    width: 100%;
+    position: fixed; /* Fijo en la parte inferior */
+    bottom: 0;
+    font-weight: normal; /* Texto normal sin negrita */
+}
