@@ -1,116 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const xpOrbs1 = document.getElementById('xp-orbs1');
-    const xpOrbs2 = document.getElementById('xp-orbs2');
-    const xpOrbs3 = document.getElementById('xp-orbs3');
-    const xpOrbsDropdown1 = document.getElementById('xp-orbs-dropdown1');
-    const xpOrbsDropdown2 = document.getElementById('xp-orbs-dropdown2');
-    const xpOrbsDropdown3 = document.getElementById('xp-orbs-dropdown3');
+    // Rellenar los menús desplegables con imágenes de orbes de XP
+    const xpImgUrls = [
+        'images/misc/xp0.png',
+        'images/misc/xp1.png',
+        'images/misc/xp2.png',
+        'images/misc/xp3.png',
+        'images/misc/xp4.png',
+        'images/misc/xp5.png',
+        'images/misc/xp6.png',
+        'images/misc/xp7.png'
+    ];
+    const xpPercent = [0, 10, 20, 30, 40, 50, 60, 70];
 
-    const xpOrbsOptions = [1, 5, 10, 20, 50, 100];
-
-    function createDropdownContent(dropdown, targetImg) {
-        xpOrbsOptions.forEach(value => {
+    [1, 2, 3].forEach((dropdownIndex) => {
+        const dropdownContent = document.getElementById(`xp-orbs-dropdown${dropdownIndex}`);
+        xpImgUrls.forEach((url, index) => {
             const img = document.createElement('img');
-            img.src = "images/misc/xp7.png";
-            img.dataset.value = value;
-            img.alt = `${value} XP`;
+            img.src = url;
+            img.setAttribute('data-value', xpPercent[index]);
+            img.addEventListener('mouseover', () => img.style.filter = 'grayscale(0%)');
+            img.addEventListener('mouseleave', () => img.style.filter = 'grayscale(100%)');
             img.addEventListener('click', () => {
-                targetImg.dataset.value = value;
-                targetImg.src = img.src;
-                dropdown.style.display = 'none';
+                document.querySelector(`#xp-orbs${dropdownIndex}`).src = url;
+                document.querySelector(`#xp-orbs${dropdownIndex}`).setAttribute('data-value', xpPercent[index]);
+                dropdownContent.style.display = 'none';
             });
-            dropdown.appendChild(img);
-        });
-    }
-
-    createDropdownContent(xpOrbsDropdown1, xpOrbs1);
-    createDropdownContent(xpOrbsDropdown2, xpOrbs2);
-    createDropdownContent(xpOrbsDropdown3, xpOrbs3);
-
-    const consumables = document.querySelectorAll('.consumable');
-    consumables.forEach(consumable => {
-        consumable.addEventListener('click', () => {
-            const isChecked = consumable.dataset.checked === 'true';
-            consumable.dataset.checked = isChecked ? 'false' : 'true';
-            consumable.style.filter = isChecked ? 'grayscale(100%)' : 'none';
+            dropdownContent.appendChild(img);
         });
     });
 
-    const form = document.getElementById('xp-form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const currentLevel = parseInt(document.getElementById('current-level').value);
-        const targetLevel = parseInt(document.getElementById('target-level').value);
-        const xpOrbs1Value = parseInt(xpOrbs1.dataset.value);
-        const xpOrbs2Value = parseInt(xpOrbs2.dataset.value);
-        const xpOrbs3Value = parseInt(xpOrbs3.dataset.value);
-        const xpPerFight = parseInt(document.getElementById('xp-per-fight').value) || 0;
-        const fightDuration = parseInt(document.getElementById('fight-duration').value) || 0;
-
-        let doubleXp = document.getElementById('double-xp').dataset.checked === 'true';
-        let tripleXp = document.getElementById('triple-xp').dataset.checked === 'true';
-
-        if (targetLevel <= currentLevel) {
-            document.getElementById('target-warning').style.display = 'block';
-            return;
-        } else {
-            document.getElementById('target-warning').style.display = 'none';
-        }
-
-        if (currentLevel < 1) {
-            document.getElementById('current-warning').style.display = 'block';
-            return;
-        } else {
-            document.getElementById('current-warning').style.display = 'none';
-        }
-
-        if (xpPerFight < 0) {
-            document.getElementById('xp-fight-warning').style.display = 'block';
-            return;
-        } else {
-            document.getElementById('xp-fight-warning').style.display = 'none';
-        }
-
-        if (fightDuration < 0) {
-            document.getElementById('fight-duration-warning').style.display = 'block';
-            return;
-        } else {
-            document.getElementById('fight-duration-warning').style.display = 'none';
-        }
-
-        let xpNeeded = (targetLevel - currentLevel) * (xpPerFight + xpOrbs1Value + xpOrbs2Value + xpOrbs3Value);
-        if (doubleXp) xpNeeded *= 2;
-        if (tripleXp) xpNeeded *= 3;
-
-        let resultText = `Necesitas ${xpNeeded} XP para alcanzar el nivel ${targetLevel}.`;
-        if (fightDuration > 0) {
-            let fightsNeeded = Math.ceil(xpNeeded / xpPerFight);
-            let totalTime = fightsNeeded * fightDuration;
-            let minutes = Math.floor(totalTime / 60);
-            let seconds = totalTime % 60;
-            resultText += ` Esto tomará aproximadamente ${minutes} minutos y ${seconds} segundos.`;
-        }
-
-        showResult(resultText);
-    });
-
-    function showResult(text) {
-        const modal = document.getElementById('resultModal');
-        const modalText = document.getElementById('modal-text');
-        const closeBtn = document.querySelector('.close');
-
-        modalText.textContent = text;
-        modal.style.display = 'block';
-
-        closeBtn.onclick = () => {
+    // Funcionalidad del modal
+    const modal = document.getElementById('resultModal');
+    const closeBtn = document.querySelector('.modal .close');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
             modal.style.display = 'none';
-        };
+        }
+    });
 
-        window.onclick = (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        };
-    }
+    // Manejador de envío del formulario
+    document.getElementById('xp-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        calculateXP();
+    });
 });
+
+function calculateXP() {
+    const currentLevel = parseInt(document.getElementById('current-level').value);
+    const targetLevel = parseInt(document.getElementById('target-level').value);
+    const xpPerFight = parseInt(document.getElementById('xp-per-fight').value);
+    const fightDuration = parseInt(document.getElementById('fight-duration').value);
+
+    if (isNaN(currentLevel) || isNaN(targetLevel) || isNaN(xpPerFight) || isNaN(fightDuration)) {
+        return; // Manejar entradas no válidas
+    }
+
+    // Realizar lógica de cálculo de XP aquí
+    const xpNeeded = calculateXpNeeded(currentLevel, targetLevel);
+    const estimatedDuration = calculateEstimatedDuration(xpNeeded, xpPerFight, fightDuration);
+
+    showModal(`XP Necesario: ${xpNeeded.toLocaleString()}<br>Duración Estimada: ${estimatedDuration.toFixed(2)} segundos`);
+}
+
+function calculateXpNeeded(currentLevel, targetLevel) {
+    // Lógica de cálculo de XP
+    return 0; // Marcador de posición
+}
+
+function calculateEstimatedDuration(xpNeeded, xpPerFight, fightDuration) {
+    // Lógica de cálculo de duración
+    return 0; // Marcador de posición
+}
+
+function showModal(message) {
+    document.getElementById('modal-text').innerHTML = message;
+    document.getElementById('resultModal').style.display = 'block';
+}
