@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de XP</title>
-    <link rel="stylesheet" href="styles/xp.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -28,15 +28,15 @@
                 <label for="xp-orbs">Orbes de XP:</label>
                 <div class="xp-orbs-group">
                     <div class="dropdown">
-                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs1" style="width: 80px; height: auto;" data-value=0>
+                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs1" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content" id="xp-orbs-dropdown1"></div>
                     </div>
                     <div class="dropdown">
-                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs2" style="width: 80px; height: auto;" data-value=0>
+                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs2" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content middle" id="xp-orbs-dropdown2"></div>
                     </div>
                     <div class="dropdown">
-                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs3" style="width: 80px; height: auto;" data-value=0>
+                        <img src="https://mgg.autos/images/misc/xp7.png" id="xp-orbs3" style="width: 80px; height: auto;" data-value="0">
                         <div class="dropdown-content right" id="xp-orbs-dropdown3"></div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
             <div class="form-group">
                 <label for="xp-per-fight">XP por Combate:</label>
                 <input type="number" id="xp-per-fight" name="xp-per-fight" min="0">
-                <span id="xp-fight-warning" class="warning" style="display: none;">El XP por Combate no puede ser negativo.</span>
+                <span id="xp-fight-warning" class="warning" style="display: none;">XP por Combate no puede ser negativo.</span>
             </div>
             <div class="form-group">
                 <label for="fight-duration">Duración del Combate (segundos):</label>
@@ -65,7 +65,7 @@
             <button type="submit">Calcular</button>
         </form>
         <br>
-        <footer>Sitio por RafXCy. Todos los Derechos Reservados ©</footer>
+        <footer>Desarrollado por Morales. Todos los Derechos Reservados ©</footer>
     </div>
     <div id="resultModal" class="modal">
         <div class="modal-content">
@@ -73,6 +73,6 @@
             <p id="modal-text"></p>
         </div>
     </div>
-    <script src="scripts/xp.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
