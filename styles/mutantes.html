@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="images/misc/Icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGG City</title>
+    <link href="https://db.onlinewebfonts.com/c/26af7133fea192d900d20e8c886a69e8?family=Aero+Matics+Bold" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <link rel="stylesheet" href="styles/mt.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Estadísticas de Mutantes</h1>
+        <div class="dropdown-container">
+            <span style="margin-right: 10px;">Filtro:</span>
+            <select id="columnDropdown">
+                <option value="">Seleccionar Columna</option>
+            </select>
+            <select id="valueDropdown" disabled>
+                <option value="">Seleccionar Valor</option>
+            </select>
+            <button id="applyFilter" disabled>Aplicar Filtro</button>
+        </div>
+
+        <div class="filter-container" id="filters"></div>
+
+        <div class="table-container" id="tableCont" style="display: none;">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <!-- Los encabezados se insertarán aquí dinámicamente -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de datos se insertarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <script src="scripts/mt.js"></script>
+</body>
+</html>
