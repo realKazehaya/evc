@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/hb.css">
+    <title>Crossbredable</title>
+</head>
+<body onload="mutantGenes('loaded');"> 
+    <div id="mgene1">
+        <select id="mutant" type="input" onChange="mutantGenes(this); breed(this)"></select>
+        <br><br>
+        <img id="mg11" />
+        <img id="mg12" />
+    </div>
+    <div class="center">
+        <img id="breedIcon"/>
+    </div>
+    <br>
+    <h3 id="output"></h3>
+    <script src="scripts/hb.js"></script>
+</body>
+</html>
