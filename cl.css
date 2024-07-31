@@ -48,110 +48,54 @@ nav ul li a:hover {
     color: #4a90e2; /* Azul más claro */
 }
 
-.hero {
-    background-color: rgba(30, 42, 56, 0.8); /* Fondo azul oscuro con opacidad */
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #5dade2; /* Azul claro */
-}
-
-.hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #ccc; /* Color de texto claro */
-}
-
-.cta-button {
-    background-color: #5dade2; /* Azul claro */
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #4a90e2; /* Azul más claro */
-}
-
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
-    background-color: rgba(44, 62, 80, 0.8); /* Fondo azul más claro con opacidad */
-}
-
-.feature-item {
-    text-align: center;
-    width: 30%;
-}
-
-.feature-item i {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #5dade2; /* Azul claro */
-}
-
-.feature-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.feature-item p {
-    font-size: 16px;
-    color: #ccc; /* Color de texto claro */
-}
-
 .container {
     background-color: rgba(44, 62, 80, 0.9); /* Fondo azul más claro para el contenedor */
-    padding: 20px;
+    padding: 30px; /* Aumenta el padding para mayor espacio interno */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 400px;
+    width: 500px; /* Ancho mayor para la calculadora */
     text-align: center;
     margin: 20px auto; /* Centrado horizontal */
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 28px; /* Tamaño del título aumentado */
     color: #5dade2; /* Azul claro */
+    margin-bottom: 20px; /* Espacio debajo del título */
 }
 
 .input-section {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    gap: 10px; /* Espacio entre el icono y el input */
+    justify-content: start; /* Alineación de los elementos a la izquierda */
 }
 
 .input-icon {
-    width: 20px; /* Tamaño más pequeño para los iconos */
-    height: 20px; /* Asegura que la altura sea proporcional */
-    margin-right: 10px; /* Espacio entre el icono y el texto */
+    width: 24px; /* Tamaño del icono aumentado */
+    height: 24px; /* Tamaño del icono aumentado */
 }
 
-label {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 16px;
+.input-section label {
+    width: 140px; /* Ancho fijo para las etiquetas aumentado */
+    text-align: left; /* Alineación del texto a la izquierda */
+    font-size: 18px; /* Tamaño de fuente aumentado */
 }
 
-input[type="number"],
-select {
-    width: 100%;
-    padding: 12px; /* Tamaño de los inputs */
+.input-section input[type="number"],
+.input-section select {
+    width: calc(100% - 150px); /* Ajusta el ancho para tener en cuenta el icono y el espacio adicional */
+    padding: 14px; /* Tamaño del padding aumentado */
     box-sizing: border-box;
     border: 1px solid #5dade2; /* Azul claro */
     border-radius: 4px;
-    background-color: #2c3e50;
-    color: #fff;
-    font-size: 16px; /* Tamaño de texto más grande */
+    background-color: #2c3e50; /* Color de fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 18px; /* Tamaño de texto más grande */
     outline: none;
+    -webkit-appearance: none; /* Oculta las flechas en WebKit (Chrome, Safari) */
+    appearance: none; /* Oculta las flechas en otros navegadores */
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -160,9 +104,21 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.input-section #CustomDiscount {
+    width: 120px; /* Ancho fijo para el campo de descuento personalizado aumentado */
+    padding: 10px; /* Tamaño del padding aumentado */
+    border-radius: 4px;
+    border: 1px solid #5dade2; /* Color de borde que combina con el esquema de color */
+    background-color: #2c3e50; /* Color de fondo oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 18px; /* Tamaño de texto consistente aumentado */
+    box-sizing: border-box;
+}
+
 .button-container {
     display: flex;
     justify-content: space-between;
+    gap: 10px; /* Espacio entre los botones */
 }
 
 button {
@@ -170,14 +126,13 @@ button {
     color: #fff; /* Texto blanco */
     border: none;
     border-radius: 4px; /* Bordes redondeados */
-    padding: 12px 20px; /* Padding ajustado */
-    font-size: 16px; /* Tamaño del texto */
+    padding: 14px 24px; /* Padding ajustado para botones más grandes */
+    font-size: 18px; /* Tamaño del texto aumentado */
     cursor: pointer;
     transition: background-color 0.3s ease; /* Transición suave */
-    width: 48%; /* Botones con un ancho de 48% para que se ajusten en fila */
+    flex: 1; /* Hace que los botones se expandan para llenar el espacio disponible */
     text-align: center;
     font-weight: bold; /* Texto en negrita */
-    margin-top: 10px; /* Margen superior */
 }
 
 .calculate-button {
@@ -238,20 +193,27 @@ footer {
 .social-links a:hover {
     color: #4a90e2; /* Azul más claro para hover */
 }
-#CustomDiscount {
-    width: 80px;
-    margin-left: 10px;
-    padding: 8px; /* Aumenta el padding para mantener la consistencia con el diseño */
-    border-radius: 4px;
-    border: 1px solid #5dade2; /* Color de borde que combina con el esquema de color */
-    background-color: #2c3e50; /* Color de fondo que coincide con el esquema oscuro */
-    color: #fff; /* Texto blanco */
-    font-size: 16px; /* Tamaño de texto consistente */
-    box-sizing: border-box;
-    display: inline;
-}
+
 #warning {
-    color: #4a90e2; /* Color rojo para el texto de advertencia */
+    color: #4a90e2; /* Color de texto de advertencia */
     font-size: 1.2em; /* Tamaño de fuente ligeramente mayor para destacar */
     margin-top: 10px; /* Espacio superior para separar del contenido anterior */
 }
+.result-container {
+    margin-top: 20px; /* Espacio superior */
+    text-align: center; /* Alineación centrada */
+}
+
+.result-container pre {
+    color: #fff; /* Texto blanco */
+    padding: 15px; /* Espacio interno */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada para mejor legibilidad */
+    margin: 0; /* Elimina el margen */
+    display: inline-block; /* Ajusta el tamaño del bloque al contenido */
+    width: auto; /* Ajusta el ancho automáticamente */
+    max-width: 100%; /* Ancho máximo del contenedor */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+}
+
