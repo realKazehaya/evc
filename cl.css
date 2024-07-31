@@ -238,3 +238,20 @@ footer {
 .social-links a:hover {
     color: #4a90e2; /* Azul más claro para hover */
 }
+#CustomDiscount {
+    width: 80px;
+    margin-left: 10px;
+    padding: 8px; /* Aumenta el padding para mantener la consistencia con el diseño */
+    border-radius: 4px;
+    border: 1px solid #5dade2; /* Color de borde que combina con el esquema de color */
+    background-color: #2c3e50; /* Color de fondo que coincide con el esquema oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 16px; /* Tamaño de texto consistente */
+    box-sizing: border-box;
+    display: inline;
+}
+#warning {
+    color: #4a90e2; /* Color rojo para el texto de advertencia */
+    font-size: 1.2em; /* Tamaño de fuente ligeramente mayor para destacar */
+    margin-top: 10px; /* Espacio superior para separar del contenido anterior */
+}
