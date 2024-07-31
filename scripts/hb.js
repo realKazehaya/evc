@@ -125,7 +125,7 @@
 		}
 		var table = document.getElementById("output");
 		table.innerHTML = "";
-		populateTable(["Mutants","Gene 1","Gene 2"]);
+		populateTable(["Mutantes","Gen 1","Gen 2"]);
 		for(var i = 0; i < results.length;i++){
 			populateTable(results[i]);
 		}
