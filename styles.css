@@ -151,3 +151,17 @@ footer {
     bottom: 0;
     font-weight: normal; /* Texto normal sin negrita */
 }
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: #00bcd4; /* Turquesa para los enlaces sociales */
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
