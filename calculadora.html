@@ -41,22 +41,25 @@
             <label for="Gold">Oro:</label>
             <input type="number" id="Gold" placeholder="Ingresa tu oro" required>
         </div>
-        <div class="input-section">
-            <img src="https://i.ibb.co/KrqPHLh/discount-icon.png" alt="Discount Icon" class="input-icon">
-            <label for="Discount">Descuento:</label>
-            <select id="Discount">
-                <option value="0">0%</option>
-                <option value="50">50%</option>
-                <option value="60">60%</option>
-                <option value="70">70%</option>
-                <option value="80">80%</option>
-                <option value="90">90%</option>
-            </select>
-        </div>
+          <div class="input-section">
+              <img src="https://i.ibb.co/KrqPHLh/discount-icon.png" alt="Discount Icon" class="input-icon">
+              <label for="Discount">Descuento:</label>
+              <select id="Discount" onchange="toggleCustomDiscount()">
+                  <option value="0">0%</option>
+                  <option value="50">50%</option>
+                  <option value="60">60%</option>
+                  <option value="70">70%</option>
+                  <option value="80">80%</option>
+                  <option value="90">90%</option>
+                  <option value="custom">Personalizado</option>
+              </select>
+              <input type="number" id="CustomDiscount" placeholder="Descuento%" maxlength="2" oninput="validateDiscount()" style="display: none;">
+          </div>
         <div class="button-container">
             <button onclick="doCalculate()" class="calculate-button">Calcular</button>
-            <button onclick="clearInputs()" class="clear-button">Borrar</button>
+<button onclick="clearInputs()" class="clear-button">Borrar</button>      
         </div>
+        <p id="warning"></p> <!-- Elemento para mostrar advertencias -->
         <div class="result-container">
             <pre id="result"></pre>
         </div>
