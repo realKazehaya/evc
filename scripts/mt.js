@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const genes = {
         '': '',
-        'Cyber': 'a',
+        'Ciber': 'a',
         'Necro': 'b',
-        'Saber': 'c',
-        'Zoomorph': 'd',
-        'Galactic': 'e',
-        'Mythic': 'f'
+        'Sable': 'c',
+        'Zoomorfo': 'd',
+        'Galáctico': 'e',
+        'Mitico': 'f'
     };
 
     const columnDropdown = document.getElementById('columnDropdown');
