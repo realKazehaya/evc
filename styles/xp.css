@@ -3,12 +3,64 @@ body {
     background-color: #282c34;
     color: #fff;
     display: flex;
-    flex-direction: column; /* Permite al footer estar al final del contenido */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding-bottom: 60px; /* Espacio para el footer fijo */
+    padding-bottom: 60px;
+    background-image: url('images/mobileheader.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #1e1e1e;
+    color: #a76edc;
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content .logo a {
+    color: #bc87eb;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #a76edc;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
 }
 
 .container {
@@ -16,7 +68,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 400px; /* Aumento del ancho de la calculadora */
+    width: 400px;
+    margin-top: 80px; /* Espacio para el header fijo */
 }
 
 .header {
@@ -49,13 +102,13 @@ body {
 .form-group input[type="number"],
 .form-group input[type="text"] {
     width: 100%;
-    padding: 12px; /* Aumento del tamaño de los inputs */
+    padding: 12px;
     box-sizing: border-box;
     border: 1px solid #bc87eb;
     border-radius: 4px;
     background-color: #282c34;
     color: #fff;
-    font-size: 16px; /* Tamaño de texto más grande */
+    font-size: 16px;
     outline: none;
 }
 
@@ -87,30 +140,30 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-    margin-right: 10px; /* Ajusta el espacio entre los dropdowns */
+    margin-right: 10px;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #282c34;
-    min-width: 240px; /* Ajusta según sea necesario */
-    max-height: 240px; /* Ajusta según sea necesario */
+    min-width: 240px;
+    max-height: 240px;
     overflow-y: auto;
     border-radius: 4px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    text-align: center; /* Centra las imágenes horizontalmente */
+    text-align: center;
 }
 
 .dropdown-content img {
-    width: calc(33.33% - 10px); /* Ajusta el ancho de las imágenes */
+    width: calc(33.33% - 10px);
     height: auto;
     padding: 5px;
     cursor: pointer;
     display: inline-block;
     box-sizing: border-box;
-    vertical-align: middle; /* Alinea las imágenes verticalmente */
+    vertical-align: middle;
 }
 
 .dropdown-content img:hover {
@@ -181,26 +234,37 @@ body {
 }
 
 footer {
-    background-color: #1e1e1e; /* Fondo oscuro para el pie de página */
-    color: #a76edc; /* Azul eléctrico */
+    background-color: #1e1e1e;
+    color: #a76edc;
     text-align: center;
-    padding: 15px; /* Espacio interno ajustado */
-    border-top: 2px solid #a76edc; /* Azul eléctrico */
-    font-size: 16px; /* Tamaño del texto ajustado */
-    width: 100%;
-    position: fixed; /* Fijo en la parte inferior */
+    padding: 15px;
+    border-top: 2px solid #a76edc;
+    position: fixed;
     bottom: 0;
-    font-weight: normal; /* Texto normal sin negrita */
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
 }
 
 .social-links {
-    margin: 10px 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .social-links a {
-    color: #00bcd4; /* Turquesa para los enlaces sociales */
-    font-size: 24px;
+    color: #00bcd4;
     margin: 0 10px;
+    font-size: 20px;
     transition: color 0.3s ease;
 }
 
@@ -208,28 +272,25 @@ footer {
     color: #fff;
 }
 
-/* Estilo para los botones */
 button {
-    background-color: #bc87eb; /* Color de fondo morado */
-    color: #fff; /* Texto blanco */
+    background-color: #bc87eb;
+    color: #fff;
     border: none;
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 12px 20px; /* Padding ajustado */
-    font-size: 16px; /* Tamaño del texto */
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave */
-    width: 100%; /* Botón de ancho completo */
+    transition: background-color 0.3s ease;
+    width: 100%;
     text-align: center;
-    font-weight: bold; /* Texto en negrita */
-    margin-top: 10px; /* Margen superior */
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-/* Estilo para el botón al pasar el cursor */
 button:hover {
-    background-color: #a573c2; /* Color de fondo morado más oscuro */
+    background-color: #a573c2;
 }
 
-/* Estilo para el botón al hacer clic */
 button:active {
-    background-color: #8a4b9c; /* Color de fondo morado aún más oscuro */
+    background-color: #8a4b9c;
 }
