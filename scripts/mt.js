@@ -1,180 +1,49 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSrX65kNGw3u6SEuCXujnHInVDGJLyJL6OrSFBr_bkHQAqu1Ke69tDBiVWCGZ-jHcHV5bWwtp8UtoP7/pub?output=csv';
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("admin-form");
+    const mutantList = {
+        mythic: document.getElementById("mythic"),
+        galactic: document.getElementById("galactic"),
+        zoomorph: document.getElementById("zoomorph"),
+        saber: document.getElementById("saber"),
+        necro: document.getElementById("necro"),
+        cyber: document.getElementById("cyber")
+    };
 
-    Papa.parse(csvUrl, {
-        download: true,
-        header: true,
-        complete: function (results) {
-            const data = results.data;
-            const columnDropdown = document.getElementById('columnDropdown');
-            const valueDropdown = document.getElementById('valueDropdown');
-            const applyFilterButton = document.getElementById('applyFilter');
-            const filtersContainer = document.getElementById('filters');
-            const tableContainer = document.getElementById('tableCont');
-            const table = document.getElementById('dataTable');
-            const tableHead = table.querySelector('thead tr');
-            const tableBody = table.querySelector('tbody');
-            const headers = results.meta.fields;
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const photo = document.getElementById("photo").value;
+        const attack1 = document.getElementById("attack1").value;
+        const damage1 = document.getElementById("damage1").value;
+        const attack2 = document.getElementById("attack2").value;
+        const damage2 = document.getElementById("damage2").value;
+        const health = document.getElementById("health").value;
+        const ability = document.getElementById("ability").value;
+        const rarity = document.getElementById("rarity").value;
+        const genes = Array.from(document.querySelectorAll('input[name="genes"]:checked')).map(gene => gene.value);
+        const hybridizable = document.querySelector('input[name="hybridizable"]:checked').value;
+        const category = genes.length > 1 ? "hybrid" : genes[0];
 
-            headers.forEach(header => {
-                const th = document.createElement('th');
-                th.textContent = header;
-                tableHead.appendChild(th);
+        const mutantElement = document.createElement("div");
+        mutantElement.classList.add("mutant");
+        mutantElement.innerHTML = `
+            <img src="${photo}" alt="${name}">
+            <h3>${name}</h3>
+            <div class="mutant-stats"><label>Ataque 1:</label> ${attack1} (Daño: ${damage1})</div>
+            <div class="mutant-stats"><label>Ataque 2:</label> ${attack2} (Daño: ${damage2})</div>
+            <div class="mutant-stats"><label>Vida:</label> ${health}</div>
+            <div class="mutant-stats"><label>Habilidad:</label> ${ability}</div>
+            <div class="mutant-stats"><label>Rareza:</label> ${rarity}</div>
+            <div class="mutant-stats"><label>Genes:</label> ${genes.join(", ")}</div>
+            <div class="mutant-stats"><label>Hibridación:</label> ${hybridizable}</div>
+        `;
 
-                const option = document.createElement('option');
-                option.value = header;
-                option.textContent = header;
-                columnDropdown.appendChild(option);
-            });
-
-            columnDropdown.addEventListener('change', function () {
-                const selectedColumn = columnDropdown.value;
-                valueDropdown.innerHTML = '<option value="">Seleccionar Valor</option>';
-
-                if (selectedColumn) {
-                    const uniqueValues = [...new Set(data.map(item => item[selectedColumn]))];
-
-                    uniqueValues.forEach(value => {
-                        const option = document.createElement('option');
-                        option.value = value;
-                        option.textContent = value;
-                        valueDropdown.appendChild(option);
-                    });
-
-                    valueDropdown.disabled = false;
-                } else {
-                    valueDropdown.disabled = true;
-                }
-
-                applyFilterButton.disabled = !selectedColumn || !valueDropdown.value;
-            });
-
-            valueDropdown.addEventListener('change', function () {
-                applyFilterButton.disabled = !valueDropdown.value;
-            });
-
-            applyFilterButton.addEventListener('click', function () {
-                const selectedColumn = columnDropdown.value;
-                const selectedValue = valueDropdown.value;
-
-                addFilter(selectedColumn, selectedValue);
-            });
-
-            function addFilter(column, value) {
-                const filterBox = document.createElement('div');
-                filterBox.classList.add('filter-box');
-                filterBox.innerHTML = `<span>${column}: ${value}</span><button class="remove-filter">X</button>`;
-
-                filtersContainer.appendChild(filterBox);
-
-                filterBox.querySelector('.remove-filter').addEventListener('click', function () {
-                    filtersContainer.removeChild(filterBox);
-                    applyFilters();
-                });
-
-                applyFilters();
-            }
-
-            function applyFilters() {
-                const activeFilters = Array.from(filtersContainer.querySelectorAll('.filter-box')).map(filterBox => {
-                    const [column, value] = filterBox.querySelector('span').textContent.split(': ');
-                    return { column, value };
-                });
-
-                const filteredData = data.filter(item => {
-                    return activeFilters.every(filter => item[filter.column] === filter.value);
-                });
-
-                renderTable(filteredData);
-            }
-
-            function renderTable(data) {
-                tableBody.innerHTML = '';
-
-                data.forEach(item => {
-                    const row = document.createElement('tr');
-                    headers.forEach(header => {
-                        const cell = document.createElement('td');
-                        cell.textContent = item[header];
-                        row.appendChild(cell);
-                    });
-                    tableBody.appendChild(row);
-                });
-
-                tableContainer.style.display = data.length > 0 ? 'block' : 'none';
-            }
-
-            renderTable(data);
-
-            // Hide loading animation when done
-            document.getElementById('loading').style.display = 'none';
+        if (category === "hybrid") {
+            mutantList.mythic.appendChild(mutantElement); // o cualquier lógica para híbridos
+        } else {
+            mutantList[category].appendChild(mutantElement);
         }
+
+        form.reset();
     });
-
-    document.getElementById('columnDropdown').addEventListener('change', function () {
-        document.getElementById('valueDropdown').disabled = !this.value;
-        document.getElementById('applyFilter').disabled = !(this.value && document.getElementById('valueDropdown').value);
-    });
-
-    document.getElementById('valueDropdown').addEventListener('change', function () {
-        document.getElementById('applyFilter').disabled = !this.value;
-    });
-
-    document.getElementById('applyFilter').addEventListener('click', function () {
-        const column = document.getElementById('columnDropdown').value;
-        const value = document.getElementById('valueDropdown').value;
-        addFilter(column, value);
-    });
-
-    function addFilter(column, value) {
-        const filterBox = document.createElement('div');
-        filterBox.classList.add('filter-box');
-        filterBox.innerHTML = `<span>${column}: ${value}</span><button class="remove-filter">X</button>`;
-        document.getElementById('filters').appendChild(filterBox);
-
-        filterBox.querySelector('.remove-filter').addEventListener('click', function () {
-            this.parentNode.remove();
-            applyFilters();
-        });
-
-        applyFilters();
-    }
-
-    function applyFilters() {
-        const filters = Array.from(document.getElementsByClassName('filter-box')).map(filterBox => {
-            const text = filterBox.querySelector('span').textContent;
-            const [column, value] = text.split(': ');
-            return { column, value };
-        });
-
-        Papa.parse(csvUrl, {
-            download: true,
-            header: true,
-            complete: function (results) {
-                const data = results.data;
-                const filteredData = data.filter(row => {
-                    return filters.every(filter => row[filter.column] === filter.value);
-                });
-                renderTable(filteredData);
-            }
-        });
-    }
-
-    function renderTable(data) {
-        const table = document.getElementById('dataTable');
-        const tbody = table.querySelector('tbody');
-        tbody.innerHTML = '';
-
-        data.forEach(row => {
-            const tr = document.createElement('tr');
-            for (const key in row) {
-                const td = document.createElement('td');
-                td.textContent = row[key];
-                tr.appendChild(td);
-            }
-            tbody.appendChild(tr);
-        });
-
-        document.getElementById('tableCont').style.display = data.length > 0 ? 'block' : 'none';
-    }
 });
