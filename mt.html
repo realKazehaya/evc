@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGG City</title>
+    <title>MGG City - Mutantes</title>
     <link rel="stylesheet" href="styles/mt.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,22 +18,50 @@
                     <li><a href="https://mgg.autos/emulador.html">Emulador</a></li>
                     <li><a href="https://mgg.autos/calculadora.html">Calculadora</a></li>
                     <li><a href="https://mgg.autos/xp.html">Calculadora de XP</a></li>
+                    <li><a href="admin.html">Panel de Administración</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Sección de Mutantes -->
     <section id="mutants">
         <div class="container">
             <h2>Mutantes por Categoría</h2>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <label for="gene-filter">Filtrar por Gene:</label>
+                <select id="gene-filter">
+                    <option value="all">Todos</option>
+                    <option value="mythic">Mítico</option>
+                    <option value="galactic">Galáctico</option>
+                    <option value="zoomorph">Zoomorfo</option>
+                    <option value="saber">Sable</option>
+                    <option value="necro">Necro</option>
+                    <option value="cyber">Ciber</option>
+                </select>
+
+                <label for="sort-by">Ordenar por:</label>
+                <select id="sort-by">
+                    <option value="attack">Más Ataque</option>
+                    <option value="health">Más Vida</option>
+                    <option value="speed">Más Velocidad</option>
+                </select>
+
+                <label>Tipo de Ataque:</label>
+                <input type="radio" id="single-attack" name="attack-type" value="individual">
+                <label for="single-attack">Individual</label>
+                <input type="radio" id="triple-attack" name="attack-type" value="triple">
+                <label for="triple-attack">Triple</label>
+            </div>
+
             <div class="category" id="mythic">
-                <h3>Mitico</h3>
-                <!-- Mutantes de categoría Mitico se agregarán aquí -->
+                <h3>Mítico</h3>
+                <!-- Mutantes de categoría Mítico se agregarán aquí -->
             </div>
             <div class="category" id="galactic">
-                <h3>Galactico</h3>
-                <!-- Mutantes de categoría Galactico se agregarán aquí -->
+                <h3>Galáctico</h3>
+                <!-- Mutantes de categoría Galáctico se agregarán aquí -->
             </div>
             <div class="category" id="zoomorph">
                 <h3>Zoomorfo</h3>
@@ -57,16 +84,15 @@
 
     <footer>
         <div class="footer-content">
-            <p>Desarrollado por Morales. Todos los Derechos Reservados ©</p>
+            <p>&copy; 2024 MGG City. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="https://web.facebook.com/mcmillonario?mibextid=LQQJ4d&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.youtube.com/@Moralexs"><i class="fab fa-youtube"></i></a>
-                <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://discord.com/invite/TzAuKWvfwV"><i class="fab fa-discord"></i></a>
+                <a href="https://twitter.com/MGGCity" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://facebook.com/MGGCity" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="https://discord.gg/MGGCity" target="_blank"><i class="fa fa-discord"></i></a>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/mt.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
