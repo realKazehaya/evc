@@ -7,6 +7,80 @@
     <link rel="stylesheet" href="styles/mt.css">
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="https://mgg.autos/">MGG City</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://mgg.autos/">Inicio</a></li>
+                    <li><a href="https://mgg.autos/emulador.html">Emulador</a></li>
+                    <li><a href="https://mgg.autos/calculadora.html">Calculadora</a></li>
+                    <li><a href="https://mgg.autos/xp.html">Calculadora de XP</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="mutants">
+        <div class="container">
+            <h2>Mutantes por Categoría</h2>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <label for="gene-filter">Filtrar por Gene:</label>
+                <select id="gene-filter">
+                    <option value="all">Todos</option>
+                    <option value="mythic">Mítico</option>
+                    <option value="galactic">Galáctico</option>
+                    <option value="zoomorph">Zoomorfo</option>
+                    <option value="saber">Sable</option>
+                    <option value="necro">Necro</option>
+                    <option value="cyber">Ciber</option>
+                </select>
+
+                <label for="sort-by">Ordenar por:</label>
+                <select id="sort-by">
+                    <option value="attack">Más Ataque</option>
+                    <option value="health">Más Vida</option>
+                    <option value="speed">Más Velocidad</option>
+                </select>
+
+                <label>Tipo de Ataque:</label>
+                <input type="radio" id="single-attack" name="attack-type" value="individual">
+                <label for="single-attack">Individual</label>
+                <input type="radio" id="triple-attack" name="attack-type" value="triple">
+                <label for="triple-attack">Triple</label>
+            </div>
+
+            <div class="category" id="mythic">
+                <h3>Mítico</h3>
+                <!-- Mutantes de categoría Mítico se agregarán aquí -->
+            </div>
+            <div class="category" id="galactic">
+                <h3>Galáctico</h3>
+                <!-- Mutantes de categoría Galáctico se agregarán aquí -->
+            </div>
+            <div class="category" id="zoomorph">
+                <h3>Zoomorfo</h3>
+                <!-- Mutantes de categoría Zoomorfo se agregarán aquí -->
+            </div>
+            <div class="category" id="saber">
+                <h3>Sable</h3>
+                <!-- Mutantes de categoría Sable se agregarán aquí -->
+            </div>
+            <div class="category" id="necro">
+                <h3>Necro</h3>
+                <!-- Mutantes de categoría Necro se agregarán aquí -->
+            </div>
+            <div class="category" id="cyber">
+                <h3>Ciber</h3>
+                <!-- Mutantes de categoría Ciber se agregarán aquí -->
+            </div>
+        </div>
+    </section>
+
     <div id="admin-panel">
         <h2>Agregar Mutante</h2>
         <form id="admin-form">
@@ -20,17 +94,30 @@
             <input type="text" id="attack1" name="attack1" required>
             <label for="damage1">Daño 1:</label>
             <input type="number" id="damage1" name="damage1" required>
+            <label>Tipo de Ataque 1:</label>
+            <input type="radio" id="attack1-single" name="attack1-type" value="individual">
+            <label for="attack1-single">Individual</label>
+            <input type="radio" id="attack1-triple" name="attack1-type" value="triple">
+            <label for="attack1-triple">Triple</label>
             
             <label for="attack2">Ataque 2:</label>
             <input type="text" id="attack2" name="attack2" required>
             <label for="damage2">Daño 2:</label>
             <input type="number" id="damage2" name="damage2" required>
+            <label>Tipo de Ataque 2:</label>
+            <input type="radio" id="attack2-single" name="attack2-type" value="individual">
+            <label for="attack2-single">Individual</label>
+            <input type="radio" id="attack2-triple" name="attack2-type" value="triple">
+            <label for="attack2-triple">Triple</label>
             
             <label for="health">Vida:</label>
             <input type="number" id="health" name="health" required>
             
             <label for="ability">Habilidad:</label>
             <input type="text" id="ability" name="ability" required>
+
+            <label for="speed">Velocidad:</label>
+            <input type="number" id="speed" name="speed" required>
 
             <label for="rarity">Rareza:</label>
             <select id="rarity" name="rarity" required>
@@ -50,9 +137,9 @@
             <input type="checkbox" id="saber" name="genes" value="saber">
             <label for="saber">Sable</label>
             <input type="checkbox" id="galactic" name="genes" value="galactic">
-            <label for="galactic">Galactico</label>
+            <label for="galactic">Galáctico</label>
             <input type="checkbox" id="mythic" name="genes" value="mythic">
-            <label for="mythic">Mitico</label>
+            <label for="mythic">Mítico</label>
             <input type="checkbox" id="necro" name="genes" value="necro">
             <label for="necro">Necro</label>
             <input type="checkbox" id="zoomorph" name="genes" value="zoomorph">
@@ -70,6 +157,18 @@
         </form>
     </div>
     
+    <footer>
+        <div class="footer-content">
+            <p>Desarrollado por Morales. Todos los Derechos Reservados ©</p>
+            <div class="social-links">
+                <a href="https://web.facebook.com/mcmillonario?mibextid=LQQJ4d&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@Moralexs"><i class="fab fa-youtube"></i></a>
+                <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://discord.com/invite/TzAuKWvfwV"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="scripts/mt.js"></script>
 </body>
 </html>
