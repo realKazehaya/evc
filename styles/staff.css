@@ -1,10 +1,15 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: url('images/mobileheader.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #f0f8ff; /* Texto en azul claro */
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    position: relative; /* Para que el footer se posicione correctamente en relación con el body */
 }
 
 .container {
@@ -16,6 +21,8 @@ header {
     background-color: rgba(44, 62, 80, 0.8); /* Fondo azul más claro para el header con opacidad */
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10; /* Asegura que el header esté por encima del contenido */
 }
 
 .header-content {
@@ -54,10 +61,13 @@ nav ul li a:hover {
 }
 
 #staff {
-    background-color: #0d0d2b; /* Fondo oscuro */
+    background-color: rgba(13, 13, 43, 0.7); /* Fondo oscuro con opacidad */
     color: #f0f8ff; /* Texto en azul claro */
     padding: 50px 0;
     text-align: center;
+    min-height: 100vh; /* Asegura que la sección cubra toda la altura de la pantalla */
+    position: relative;
+    z-index: 1; /* Asegura que el contenido del staff esté sobre el fondo */
 }
 
 #staff h2 {
@@ -69,10 +79,12 @@ nav ul li a:hover {
     display: inline-block;
     width: 300px;
     margin: 20px;
-    background-color: #1a1a3d; /* Fondo de los miembros del staff */
+    background-color: rgba(26, 26, 61, 0.9); /* Fondo de los miembros del staff con algo de transparencia */
     border-radius: 10px;
     padding: 20px;
     transition: transform 0.3s ease;
+    position: relative; /* Asegúrate de que la posición sea relativa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega una sombra para destacar */
 }
 
 .staff-member:hover {
@@ -118,9 +130,9 @@ footer {
     text-align: center;
     padding: 15px;
     border-top: 2px solid #5dade2; /* Azul claro */
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Cambiado de fixed a relative para evitar problemas de visibilidad */
     width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* Sombra en el footer para que resalte */
 }
 
 .footer-content {
