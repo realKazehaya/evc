@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="icon" href="images/misc/Icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGG Estadísticas</title>
-    <link href="https://db.onlinewebfonts.com/c/26af7133fea192d900d20e8c886a69e8?family=Aero+Matics+Bold" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap">
+    <title>MGG City</title>
     <link rel="stylesheet" href="styles/mt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <div id="container">
-        <h1>MGG Estadísticas</h1>
-        <div class="dropdown-container">
-            <span style="margin-right: 10px;">Filtro:</span>
-            <select id="columnDropdown">
-                <option value="">Seleccionar Columna</option>
-            </select>
-            <select id="valueDropdown" disabled>
-                <option value="">Seleccionar Valor</option>
-            </select>
-            <button id="applyFilter" disabled>Aplicar Filtro</button>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <a href="https://mgg.autos/">MGG City</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="https://mgg.autos/">Inicio</a></li>
+                    <li><a href="https://mgg.autos/emulador.html">Emulador</a></li>
+                    <li><a href="https://mgg.autos/calculadora.html">Calculadora</a></li>
+                    <li><a href="https://mgg.autos/xp.html">Calculadora de XP</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="filter-container" id="filters"></div>
-        <div class="table-container" id="tableCont" style="display: none;">
-            <table id="dataTable">
-                <thead>
-                    <tr>
-                        <!-- Encabezados se insertarán aquí dinámicamente -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Filas de datos se insertarán aquí dinámicamente -->
-                </tbody>
-            </table>
+    </header>
+
+    <!-- Sección de Mutantes -->
+    <section id="mutants">
+        <div class="container">
+            <h2>Mutantes por Categoría</h2>
+            <div class="category" id="mythic">
+                <h3>Mitico</h3>
+                <!-- Mutantes de categoría Mitico se agregarán aquí -->
+            </div>
+            <div class="category" id="galactic">
+                <h3>Galactico</h3>
+                <!-- Mutantes de categoría Galactico se agregarán aquí -->
+            </div>
+            <div class="category" id="zoomorph">
+                <h3>Zoomorfo</h3>
+                <!-- Mutantes de categoría Zoomorfo se agregarán aquí -->
+            </div>
+            <div class="category" id="saber">
+                <h3>Sable</h3>
+                <!-- Mutantes de categoría Sable se agregarán aquí -->
+            </div>
+            <div class="category" id="necro">
+                <h3>Necro</h3>
+                <!-- Mutantes de categoría Necro se agregarán aquí -->
+            </div>
+            <div class="category" id="cyber">
+                <h3>Ciber</h3>
+                <!-- Mutantes de categoría Ciber se agregarán aquí -->
+            </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>Desarrollado por Morales. Todos los Derechos Reservados ©</p>
+            <div class="social-links">
+                <a href="https://web.facebook.com/mcmillonario?mibextid=LQQJ4d&_rdc=1&_rdr"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@Moralexs"><i class="fab fa-youtube"></i></a>
+                <a href="https://chat.whatsapp.com/GcNw0FIzAUJ5gYP34r8q9M"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://discord.com/invite/TzAuKWvfwV"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script src="scripts/mt.js"></script>
 </body>
 </html>
