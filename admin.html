@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - MGG City</title>
+    <link rel="stylesheet" href="styles/mt.css">
+</head>
+<body>
+    <div id="admin-panel">
+        <h2>Agregar Mutante</h2>
+        <form id="admin-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="photo">URL de la Foto:</label>
+            <input type="text" id="photo" name="photo" required>
+            
+            <label for="attack1">Ataque 1:</label>
+            <input type="text" id="attack1" name="attack1" required>
+            <label for="damage1">Daño 1:</label>
+            <input type="number" id="damage1" name="damage1" required>
+            
+            <label for="attack2">Ataque 2:</label>
+            <input type="text" id="attack2" name="attack2" required>
+            <label for="damage2">Daño 2:</label>
+            <input type="number" id="damage2" name="damage2" required>
+            
+            <label for="health">Vida:</label>
+            <input type="number" id="health" name="health" required>
+            
+            <label for="ability">Habilidad:</label>
+            <input type="text" id="ability" name="ability" required>
+
+            <label for="rarity">Rareza:</label>
+            <select id="rarity" name="rarity" required>
+                <option value="comun">Común</option>
+                <option value="legendario">Legendario</option>
+                <option value="exclusivo">Exclusivo</option>
+                <option value="zodiaco">Zodiaco</option>
+                <option value="reactor">Reactor</option>
+                <option value="heroico">Heroico</option>
+                <option value="videojuegos">Videojuegos</option>
+                <option value="eventos">Eventos</option>
+            </select>
+            
+            <label>Genes:</label>
+            <input type="checkbox" id="cyber" name="genes" value="cyber">
+            <label for="cyber">Ciber</label>
+            <input type="checkbox" id="saber" name="genes" value="saber">
+            <label for="saber">Sable</label>
+            <input type="checkbox" id="galactic" name="genes" value="galactic">
+            <label for="galactic">Galactico</label>
+            <input type="checkbox" id="mythic" name="genes" value="mythic">
+            <label for="mythic">Mitico</label>
+            <input type="checkbox" id="necro" name="genes" value="necro">
+            <label for="necro">Necro</label>
+            <input type="checkbox" id="zoomorph" name="genes" value="zoomorph">
+            <label for="zoomorph">Zoomorfo</label>
+            
+            <label>Hibridación:</label>
+            <input type="radio" id="hybridizable" name="hybridizable" value="Sí" required>
+            <label for="hybridizable">Sí</label>
+            <input type="radio" id="hybridizable-possession" name="hybridizable" value="Solo si lo posees" required>
+            <label for="hybridizable-possession">Solo si lo posees</label>
+            <input type="radio" id="non-hybridizable" name="hybridizable" value="No" required>
+            <label for="non-hybridizable">No</label>
+            
+            <button type="submit">Agregar Mutante</button>
+        </form>
+    </div>
+    
+    <script src="scripts/mt.js"></script>
+</body>
+</html>
