@@ -1,135 +1,164 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSrX65kNGw3u6SEuCXujnHInVDGJLyJL6OrSFBr_bkHQAqu1Ke69tDBiVWCGZ-jHcHV5bWwtp8UtoP7/pub?output=csv';
-
-    const genes = {
-        '': '',
-        'Ciber': 'a',
-        'Necro': 'b',
-        'Sable': 'c',
-        'Zoomorfo': 'd',
-        'Galáctico': 'e',
-        'Mitico': 'f'
-    };
-
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5fp0ohlA5uPRzfhRnuGuSaq8xicTntBsx0br1mnDhgodvA7mUSkwg6QUdm5LaXYdWz4wjg-UXqkuB/pub?gid=583644984&single=true&output=csv';
+    const containerDiv = document.getElementById('container');
+    const tableContainer = document.getElementById('tableCont');
     const columnDropdown = document.getElementById('columnDropdown');
     const valueDropdown = document.getElementById('valueDropdown');
-    const applyFilter = document.getElementById('applyFilter');
-    const tableContainer = document.getElementById('tableCont');
-    const filtersContainer = document.getElementById('filters');
-    const dataTable = document.getElementById('dataTable');
+    const applyFilterButton = document.getElementById('applyFilter');
+    const filtersDiv = document.getElementById('filters');
 
-    let allData = [];
-    let filteredData = [];
-
-    Papa.parse(csvUrl, {
-        download: true,
-        header: true,
-        complete: function (results) {
-            allData = results.data;
-            populateDropdowns();
-            initializeTable();
-        }
-    });
-
-    function populateDropdowns() {
-        const columns = Object.keys(allData[0]);
-        columns.forEach(column => {
-            const option = document.createElement('option');
-            option.value = column;
-            option.textContent = column;
-            columnDropdown.appendChild(option);
-        });
-    }
-
-    function initializeTable() {
-        if (allData.length === 0) return;
-
-        const headers = Object.keys(allData[0]);
-        const thead = dataTable.querySelector('thead tr');
-        const tbody = dataTable.querySelector('tbody');
-
-        headers.forEach(header => {
-            const th = document.createElement('th');
-            th.textContent = header;
-            th.addEventListener('click', () => sortTable(header));
-            thead.appendChild(th);
-        });
-
-        populateTable(allData);
-
-        columnDropdown.addEventListener('change', function () {
-            const selectedColumn = this.value;
-            const values = new Set(allData.map(row => row[selectedColumn]));
-            valueDropdown.innerHTML = '<option value="">Select Value</option>';
-            values.forEach(value => {
-                const option = document.createElement('option');
-                option.value = value;
-                option.textContent = value;
-                valueDropdown.appendChild(option);
-            });
-            valueDropdown.disabled = !selectedColumn;
-            applyFilter.disabled = !selectedColumn;
-        });
-
-        applyFilter.addEventListener('click', applyFilters);
-    }
+    let filters = [];
+    let tableData = [];
+    let originalData = [];
 
     function populateTable(data) {
-        const tbody = dataTable.querySelector('tbody');
+        console.log('Populating table with data:', data); // Agregado para verificar los datos
+        const table = document.getElementById('dataTable');
+        const thead = table.querySelector('thead');
+        const tbody = table.querySelector('tbody');
+        const columns = Object.keys(data[0]);
+
+        thead.innerHTML = '';
         tbody.innerHTML = '';
+
+        const headerRow = document.createElement('tr');
+        columns.forEach(col => {
+            const th = document.createElement('th');
+            th.textContent = col;
+            th.setAttribute('data-column', col);
+            th.addEventListener('click', () => sortTableByColumn(col));
+            headerRow.appendChild(th);
+        });
+        thead.appendChild(headerRow);
+
         data.forEach(row => {
             const tr = document.createElement('tr');
-            Object.values(row).forEach(cell => {
+            columns.forEach(col => {
                 const td = document.createElement('td');
-                td.textContent = cell;
+                td.textContent = row[col];
                 tr.appendChild(td);
             });
             tbody.appendChild(tr);
         });
+
+        applyStyles();
     }
 
-    function sortTable(header) {
-        const th = dataTable.querySelector(`th:contains(${header})`);
-        const index = Array.from(th.parentNode.children).indexOf(th);
-        const isAsc = th.classList.toggle('sort-asc');
-        filteredData.sort((a, b) => {
-            const aValue = a[header];
-            const bValue = b[header];
-            if (aValue < bValue) return isAsc ? -1 : 1;
-            if (aValue > bValue) return isAsc ? 1 : -1;
+    function applyStyles() {
+        const rows = document.querySelectorAll('#dataTable tbody tr');
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            cells.forEach(cell => {
+                if (cell.textContent === 'Ciber') {
+                    cell.classList.add('ciber');
+                } else if (cell.textContent === 'Necro') {
+                    cell.classList.add('necro');
+                } else if (cell.textContent === 'Sable') {
+                    cell.classList.add('sable');
+                } else if (cell.textContent === 'Zoomorfo') {
+                    cell.classList.add('zoomorfo');
+                } else if (cell.textContent === 'Galáctico') {
+                    cell.classList.add('galáctico');
+                } else if (cell.textContent === 'Mitico') {
+                    cell.classList.add('mitico');
+                }
+            });
+        });
+    }
+
+    function sortTableByColumn(column) {
+        let sortedData = [...tableData];
+        const currentTh = document.querySelector(`th[data-column="${column}"]`);
+        const isAscending = currentTh.classList.contains('sort-asc');
+
+        sortedData.sort((a, b) => {
+            if (a[column] < b[column]) return isAscending ? -1 : 1;
+            if (a[column] > b[column]) return isAscending ? 1 : -1;
             return 0;
         });
-        populateTable(filteredData);
+
+        document.querySelectorAll('th').forEach(th => {
+            th.classList.remove('sort-asc', 'sort-desc');
+        });
+        currentTh.classList.toggle('sort-asc', !isAscending);
+        currentTh.classList.toggle('sort-desc', isAscending);
+
+        populateTable(sortedData);
+    }
+
+    function populateDropdowns(data) {
+        console.log('Populating dropdowns with data:', data); // Agregado para verificar los datos
+        const columns = Object.keys(data[0]);
+
+        columns.forEach(col => {
+            const option = document.createElement('option');
+            option.value = col;
+            option.textContent = col;
+            columnDropdown.appendChild(option);
+        });
+
+        columnDropdown.addEventListener('change', () => {
+            const selectedColumn = columnDropdown.value;
+            valueDropdown.innerHTML = '<option value="">Seleccionar Valor</option>';
+            valueDropdown.disabled = !selectedColumn;
+            applyFilterButton.disabled = true;
+
+            if (selectedColumn) {
+                const uniqueValues = [...new Set(data.map(item => item[selectedColumn]))];
+                uniqueValues.forEach(val => {
+                    const option = document.createElement('option');
+                    option.value = val;
+                    option.textContent = val;
+                    valueDropdown.appendChild(option);
+                });
+            }
+        });
+
+        valueDropdown.addEventListener('change', () => {
+            applyFilterButton.disabled = !valueDropdown.value;
+        });
+
+        applyFilterButton.addEventListener('click', () => {
+            const selectedColumn = columnDropdown.value;
+            const selectedValue = valueDropdown.value;
+            filters.push({ column: selectedColumn, value: selectedValue });
+            applyFilters();
+        });
     }
 
     function applyFilters() {
-        const selectedColumn = columnDropdown.value;
-        const selectedValue = valueDropdown.value;
-        if (selectedColumn && selectedValue) {
-            filteredData = allData.filter(row => row[selectedColumn] === selectedValue);
-        } else {
-            filteredData = [...allData];
-        }
+        let filteredData = originalData;
+        filtersDiv.innerHTML = '';
+
+        filters.forEach(filter => {
+            const filterBox = document.createElement('div');
+            filterBox.classList.add('filter-box');
+            filterBox.innerHTML = `<span>${filter.column}: ${filter.value}</span><button class="remove-filter">X</button>`;
+            filtersDiv.appendChild(filterBox);
+
+            filterBox.querySelector('.remove-filter').addEventListener('click', () => {
+                filters = filters.filter(f => f !== filter);
+                applyFilters();
+            });
+
+            filteredData = filteredData.filter(row => row[filter.column] === filter.value);
+        });
+
+        tableData = filteredData;
         populateTable(filteredData);
     }
 
-    function showLoading() {
-        document.getElementById('loading').style.display = 'flex';
-    }
-
-    function hideLoading() {
-        document.getElementById('loading').style.display = 'none';
-    }
-
-    showLoading();
     Papa.parse(csvUrl, {
         download: true,
         header: true,
+        dynamicTyping: true,
         complete: function (results) {
-            allData = results.data;
-            populateDropdowns();
-            initializeTable();
-            hideLoading();
+            console.log(results); // Agregado para verificar los resultados
+            originalData = results.data;
+            tableData = [...originalData];
+            populateTable(tableData);
+            populateDropdowns(tableData);
+            tableContainer.style.display = 'block';
         }
     });
 });
