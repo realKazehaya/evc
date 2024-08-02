@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT5fp0ohlA5uPRzfhRnuGuSaq8xicTntBsx0br1mnDhgodvA7mUSkwg6QUdm5LaXYdWz4wjg-UXqkuB/pub?gid=583644984&single=true&output=csv';
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vShAuoT87Pot71paYFaXCl6WF-pXq3C6qzi_g4CuUGLs0uZfp_OZEy2DzOWOtRMwifM9qQsfaTOt53p/pub?gid=1887495544&single=true&output=csv';
     const containerDiv = document.getElementById('container');
     const tableContainer = document.getElementById('tableCont');
     const columnDropdown = document.getElementById('columnDropdown');
@@ -49,18 +49,18 @@ document.addEventListener('DOMContentLoaded', function () {
         rows.forEach(row => {
             const cells = row.querySelectorAll('td');
             cells.forEach(cell => {
-                if (cell.textContent === 'Ciber') {
-                    cell.classList.add('ciber');
+                if (cell.textContent === 'Cyber') {
+                    cell.classList.add('cyber');
                 } else if (cell.textContent === 'Necro') {
                     cell.classList.add('necro');
-                } else if (cell.textContent === 'Sable') {
-                    cell.classList.add('sable');
-                } else if (cell.textContent === 'Zoomorfo') {
-                    cell.classList.add('zoomorfo');
-                } else if (cell.textContent === 'Galáctico') {
-                    cell.classList.add('galáctico');
-                } else if (cell.textContent === 'Mitico') {
-                    cell.classList.add('mitico');
+                } else if (cell.textContent === 'Saber') {
+                    cell.classList.add('saber');
+                } else if (cell.textContent === 'Zoomorph') {
+                    cell.classList.add('zoomorph');
+                } else if (cell.textContent === 'Galactic') {
+                    cell.classList.add('galactic');
+                } else if (cell.textContent === 'Mythic') {
+                    cell.classList.add('mythic');
                 }
             });
         });
