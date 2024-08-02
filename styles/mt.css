@@ -1,174 +1,192 @@
-@import url(https://db.onlinewebfonts.com/c/26af7133fea192d900d20e8c886a69e8?family=Aero+Matics+Bold);
-@font-face {
-    font-family: "Aero Matics Bold";
-    src: url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.eot");
-    src: url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/26af7133fea192d900d20e8c886a69e8.svg#Aero Matics Bold")format("svg");
-}
 body {
-    font-family: 'Aero Matics Bold', Arial, sans-serif;
-    text-align: center;
-    background-color: #1f1f1f;
-    color: #fff;
+    background-color: #0d0d2b; /* Fondo oscuro */
+    color: #f0f8ff; /* Texto en azul claro */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
-#container {
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: rgba(44, 62, 80, 0.8); /* Fondo azul más claro para el header con opacidad */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #5dade2; /* Azul claro */
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #5dade2; /* Azul claro */
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #4a90e2; /* Azul más claro */
+}
+
+#mutants {
+    background-color: #0d0d2b; /* Fondo oscuro */
+    color: #f0f8ff; /* Texto en azul claro */
+    padding: 50px 0;
+    text-align: center;
+}
+
+#mutants h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.category {
+    margin: 20px 0;
+}
+
+.category h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.mutant {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    background-color: #1a1a3d; /* Fondo de los mutantes */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.mutant:hover {
+    transform: scale(1.05);
+}
+
+.mutant img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.mutant h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.mutant-stats {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.mutant-stats label {
+    font-weight: bold;
+}
+
+footer {
+    background-color: rgba(30, 42, 56, 0.8); /* Fondo azul oscuro para el pie de página con opacidad */
+    color: #5dade2; /* Azul claro */
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #5dade2; /* Azul claro */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-content .social-links {
+    margin-top: 10px;
+    display: flex;
     justify-content: center;
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    max-width: 100%;
-    background-color: #333;
+}
+
+.footer-content .social-links a {
+    color: #5dade2; /* Azul claro */
+    margin: 0 10px;
+    font-size: 20px; /* Tamaño de íconos sociales */
+    transition: color 0.3s ease;
+}
+
+.footer-content .social-links a:hover {
+    color: #4a90e2; /* Azul más claro para hover */
+}
+
+/* Panel Administrativo */
+#admin-panel {
+    background-color: #1a1a3d;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    width: 80%;
+    color: #f0f8ff;
 }
-h1 {
-    margin-top: 0;
-    font-size: 32px;
+
+#admin-panel h2 {
     text-align: center;
 }
-h2 {
-    margin-top: 0;
-    font-size: 20px;
-    text-align: center;
+
+#admin-panel label {
+    display: block;
+    margin: 10px 0 5px;
 }
-.table-container {
+
+#admin-panel input,
+#admin-panel select {
     width: 100%;
-    max-width: 100%;
-}
-table {
-    position: relative;
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 18px;
-}
-th, td {
-    border-style: hidden!important;
     padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
-    font-size: 16px; 
-}
-td {
-    font-family: 'Rubik', Arial, sans-serif;
-}
-th {
-    font-family: 'Aero Matics Bold', Arial, sans-serif;
-    top: 0;
-    z-index: 1;
-    position: sticky;
-    cursor: pointer;
-    background-color: #555;
-    font-size: 20px;
-}
-th:hover {
-    background-color: #777;
-}
-th.sort-asc::after,
-th.sort-desc::after {
-    display: inline-block;
-    vertical-align: middle;
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-}
-th.sort-asc::after {
-    border-bottom: 5px solid #fff;
-}
-th.sort-desc::after {
-    border-top: 5px solid #fff;
-}
-input[type="text"] {
-    margin: 10px 0;
-    padding: 5px;
-    width: 200px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-}
-input[type="text"]:focus {
-    outline: none;
-    border-color: #aaa;
-}
-.bold {
-    font-weight: bold;
-}
-select {
-    margin: 10px 5px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    font-family: 'Aero Matics', Arial, sans-serif;
-}
-.hidden-text {
-    display: none;
-}
-.filter-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-.filter-box {
-    display: flex;
-    align-items: center;
-    background-color: #444;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.filter-box span {
-    margin-right: 5px;
-}
-.remove-filter {
-    cursor: pointer;
-    background-color: red;
-    color: white;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
-    padding: 5px;
 }
-.remove-filter:hover {
-    background-color: darkred;
+
+#admin-panel button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5dade2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
-.dropdown-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.cyber {
-  background: linear-gradient(to right, #b26c00, #4b4b4b);
-  color: white;
-}
-.necro {
-  background: linear-gradient(to right, #738505, #4b4b4b);
-  color: white;
-}
-.saber {
-  background: linear-gradient(to right, #8e270f, #4b4b4b);
-  color: white;
-}
-.zoomorph {
-  background: linear-gradient(to right, #734924, #4b4b4b);
-  color: white;
-}
-.galactic {
-  background: linear-gradient(to right, #3a4678, #4b4b4b);
-  color: white;
-}
-.mythic {
-  background: linear-gradient(to right, #623b79, #4b4b4b);
-  color: white;
+
+#admin-panel button:hover {
+    background-color: #4a90e2;
 }
