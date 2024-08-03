@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gestión de Mutantes</title>
+    <style>
+        /* Estilos para el panel de gestión de mutantes */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        
+        form label {
+            display: block;
+            color: #555;
+            font-weight: bold;
+        }
+        
+        form input[type="text"], form input[type="number"], form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        
+        form button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            justify-self: end;
+            grid-column: 1 / -1;
+        }
+        
+        form button:hover {
+            background-color: #45a049;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        td {
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        td:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .mutant-image {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .gene-image, .ability-image {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Panel de Gestión de Mutantes</h1>
+
+    <form id="mutantForm">
+        <label for="icon">Icono:</label>
+        <input type="text" id="icon" required>
+
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="category">Categoría:</label>
+        <select id="category">
+            <option value="Común">Común</option>
+            <option value="Legendario">Legendario</option>
+            <option value="Secreto">Secreto</option>
+            <option value="Exclusivo">Exclusivo</option>
+            <option value="Reactor">Reactor</option>
+            <option value="Zodiaco">Zodiaco</option>
+            <option value="PvP">PvP</option>
+            <option value="VideoJuegos">VideoJuegos</option>
+        </select>
+
+        <label for="gene1">Gen 1:</label>
+        <select id="gene1">
+            <option value="Ciber">Ciber</option>
+            <option value="Sable">Sable</option>
+            <option value="Galáctico">Galáctico</option>
+            <option value="Necro">Necro</option>
+            <option value="Mítico">Mítico</option>
+            <option value="Zoomorfo">Zoomorfo</option>
+            <option value="Neutro">Neutro</option>
+        </select>
+
+        <label for="gene2">Gen 2:</label>
+        <select id="gene2">
+            <option value="Ciber">Ciber</option>
+            <option value="Sable">Sable</option>
+            <option value="Galáctico">Galáctico</option>
+            <option value="Necro">Necro</option>
+            <option value="Mítico">Mítico</option>
+            <option value="Zoomorfo">Zoomorfo</option>
+            <option value="Neutro">Neutro</option>
+        </select>
+
+        <label for="ability">Habilidad:</label>
+        <select id="ability">
+            <option value="Herida">Herida</option>
+            <option value="Fortalecimiento">Fortalecimiento</option>
+            <option value="Absorción">Absorción</option>
+            <option value="Debilitamiento">Debilitamiento</option>
+            <option value="Escudo">Escudo</option>
+        </select>
+
+        <label for="abilityPercentage">Habilidad:</label>
+        <input type="number" id="abilityPercentage" required>
+
+        <label for="attack1">Ataque 1:</label>
+        <input type="text" id="attack1" required>
+
+        <label for="attack2">Ataque 2:</label>
+        <input type="text" id="attack2" required>
+
+        <label for="speed">Velocidad:</label>
+        <input type="number" id="speed" required>
+
+        <label for="life">Vida:</label>
+        <input type="number" id="life" required>
+
+        <label for="hibridable">Hibridable:</label>
+        <select id="hibridable">
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="bingo">Bingo:</label>
+        <input type="text" id="bingo" required>
+
+        <button type="submit">Añadir Mutante</button>
+    </form>
+
+    <table id="mutantTable">
+        <thead>
+            <tr>
+                <th>Icono</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Gen 1</th>
+                <th>Gen 2</th>
+                <th>Habilidad</th>
+                <th>Habilidad</th>
+                <th>Ataque 1</th>
+                <th>Ataque 2</th>
+                <th>Velocidad</th>
+                <th>Vida</th>
+                <th>Hibridable</th>
+                <th>Bingo</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Los mutantes se añadirán aquí -->
+        </tbody>
+    </table>
+</div>
+
+<script>
+    const form = document.getElementById('mutantForm');
+    const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
+    let mutants = JSON.parse(localStorage.getItem('mutants')) || [];
+
+    mutants.forEach(mutant => {
+        addMutantToTable(mutant);
+    });
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const icon = document.getElementById('icon').value;
+        const name = document.getElementById('name').value;
+        const category = document.getElementById('category').value;
+        const gene1 = document.getElementById('gene1').value;
+        const gene2 = document.getElementById('gene2').value;
+        const ability = document.getElementById('ability').value;
+        const abilityPercentage = parseInt(document.getElementById('abilityPercentage').value);
+        const attack1 = document.getElementById('attack1').value;
+        const attack2 = document.getElementById('attack2').value;
+        const speed = parseInt(document.getElementById('speed').value);
+        const life = parseInt(document.getElementById('life').value);
+        const hibridable = document.getElementById('hibridable').value;
+        const bingo = document.getElementById('bingo').value;
+
+        const mutant = {
+            icon,
+            name,
+            category,
+            gene1,
+            gene2,
+            ability,
+            abilityPercentage,
+            attack1,
+            attack2,
+            speed,
+            life,
+            hibridable,
+            bingo
+        };
+
+        mutants.push(mutant);
+        addMutantToTable(mutant);
+        localStorage.setItem('mutants', JSON.stringify(mutants));
+
+        form.reset();
+    });
+
+    function addMutantToTable(mutant) {
+        const newRow = tableBody.insertRow();
+        newRow.innerHTML = `
+            <td>${mutant.icon}</td>
+            <td>${mutant.name}</td>
+            <td>${mutant.category}</td>
+            <td>
+                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
+            </td>
+            <td>
+                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
+            </td>
+            <td>
+                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image">
+            </td>
+            <td>${mutant.abilityPercentage}%</td>
+            <td>${mutant.attack1}</td>
+            <td>${mutant.attack2}</td>
+            <td>${mutant.speed}</td>
+            <td>${mutant.life}</td>
+            <td>${mutant.hibridable}</td>
+            <td>${mutant.bingo}</td>
+            <td><button onclick="deleteMutant('${mutant.name}')">Borrar</button></td>
+        `;
+    }
+
+    function deleteMutant(name) {
+        mutants = mutants.filter(mutant => mutant.name !== name);
+        localStorage.setItem('mutants', JSON.stringify(mutants));
+        tableBody.innerHTML = '';
+        mutants.forEach(mutant => addMutantToTable(mutant));
+    }
+</script>
+
+</body>
+</html>
