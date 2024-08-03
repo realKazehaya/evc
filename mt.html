@@ -61,7 +61,7 @@
             background-color: #3b5998; /* Color azul claro al pasar el ratón */
         }
 
-        .gene-image, .ability-image {
+        .gene-image, .ability-image, .icon-image {
             width: 30px; /* Tamaño de iconos aumentado */
             height: 30px; /* Tamaño de iconos aumentado */
             vertical-align: middle;
@@ -79,6 +79,11 @@
         tr:nth-child(even) {
             background-color: #3b3b3b; /* Fila par con color diferente */
         }
+
+        .icon-cell img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +100,7 @@
                 <th>Gen 1</th>
                 <th>Gen 2</th>
                 <th>Habilidad</th>
-                <th>Porcentaje</th>
+                <th>Habilidad%</th>
                 <th>Ataque 1</th>
                 <th>Ataque 2</th>
                 <th>Velocidad</th>
@@ -121,25 +126,25 @@
     function addMutantToTable(mutant) {
         const newRow = tableBody.insertRow();
         newRow.innerHTML = `
-            <td>${mutant.icon}</td>
+            <td><img src="${mutant.icon}" alt="${mutant.icon}" class="icon-image"></td>
             <td>${mutant.name}</td>
             <td>${mutant.category}</td>
             <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image"> ${mutant.gene1}
+                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
             </td>
             <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image"> ${mutant.gene2}
+                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
             </td>
             <td>
-                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image"> ${mutant.ability}
+                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image">
             </td>
             <td>${mutant.abilityPercentage}%</td>
             <td>${mutant.attack1}</td>
             <td>${mutant.attack2}</td>
-            <td>${mutant.speed}</td>
-            <td>${mutant.life}</td>
+            <td><img src="https://mgg.autos/images/misc/Speed.png" alt="Speed" class="icon-image"></td>
+            <td><img src="https://mgg.autos/images/misc/HP.png" alt="Vida" class="icon-image"></td>
             <td>${mutant.hibridable}</td>
-            <td>${mutant.bingo}</td>
+            <td><img src="https://mgg.autos/images/misc/Bingo.png" alt="Bingo" class="icon-image"></td>
         `;
     }
 </script>
