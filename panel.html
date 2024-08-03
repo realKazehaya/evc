@@ -129,6 +129,8 @@
             <option value="Zodiaco">Zodiaco</option>
             <option value="PvP">PvP</option>
             <option value="VideoJuegos">VideoJuegos</option>
+            <option value="Eventos">Eventos</option>
+            <option value="Heroico">Heroico</option>
         </select>
 
         <label for="gene1">Gen 1:</label>
@@ -162,7 +164,7 @@
             <option value="Escudo">Escudo</option>
         </select>
 
-        <label for="abilityPercentage">Habilidad:</label>
+        <label for="abilityPercentage">Habilidad %:</label>
         <input type="number" id="abilityPercentage" required>
 
         <label for="attack1">Ataque 1:</label>
@@ -198,7 +200,7 @@
                 <th>Gen 1</th>
                 <th>Gen 2</th>
                 <th>Habilidad</th>
-                <th>Habilidad</th>
+                <th>Habilidad %</th>
                 <th>Ataque 1</th>
                 <th>Ataque 2</th>
                 <th>Velocidad</th>
@@ -258,44 +260,4 @@
 
         mutants.push(mutant);
         addMutantToTable(mutant);
-        localStorage.setItem('mutants', JSON.stringify(mutants));
-
-        form.reset();
-    });
-
-    function addMutantToTable(mutant) {
-        const newRow = tableBody.insertRow();
-        newRow.innerHTML = `
-            <td>${mutant.icon}</td>
-            <td>${mutant.name}</td>
-            <td>${mutant.category}</td>
-            <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
-            </td>
-            <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
-            </td>
-            <td>
-                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image">
-            </td>
-            <td>${mutant.abilityPercentage}%</td>
-            <td>${mutant.attack1}</td>
-            <td>${mutant.attack2}</td>
-            <td>${mutant.speed}</td>
-            <td>${mutant.life}</td>
-            <td>${mutant.hibridable}</td>
-            <td>${mutant.bingo}</td>
-            <td><button onclick="deleteMutant('${mutant.name}')">Borrar</button></td>
-        `;
-    }
-
-    function deleteMutant(name) {
-        mutants = mutants.filter(mutant => mutant.name !== name);
-        localStorage.setItem('mutants', JSON.stringify(mutants));
-        tableBody.innerHTML = '';
-        mutants.forEach(mutant => addMutantToTable(mutant));
-    }
-</script>
-
-</body>
-</html>
+        localStorage.setItem('mutants', JSON.stringify(mut
