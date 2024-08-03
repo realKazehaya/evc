@@ -5,36 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Mutantes</title>
     <style>
-        /* Estilos para la lista de mutantes */
+        /* Estilos generales */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
+            font-size: 2.5em;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
         }
         
         th, td {
-            padding: 15px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -54,9 +58,34 @@
             background-color: #f1f1f1;
         }
         
-        .mutant-image {
-            max-width: 100px;
-            max-height: 100px;
+        .gene-image, .ability-image {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        /* Estilo para el botón de borrar */
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Estilo para los iconos de habilidad */
+        .ability-image {
+            width: 25px; /* Tamaño reducido */
+            height: 25px; /* Tamaño reducido */
+            margin-right: 5px;
         }
     </style>
 </head>
@@ -81,6 +110,7 @@
                 <th>Vida</th>
                 <th>Hibridable</th>
                 <th>Bingo</th>
+                <th>Acción</th>
             </tr>
         </thead>
         <tbody>
@@ -119,7 +149,15 @@
             <td>${mutant.life}</td>
             <td>${mutant.hibridable}</td>
             <td>${mutant.bingo}</td>
+            <td><button onclick="deleteMutant('${mutant.name}')">Borrar</button></td>
         `;
+    }
+
+    function deleteMutant(name) {
+        mutants = mutants.filter(mutant => mutant.name !== name);
+        localStorage.setItem('mutants', JSON.stringify(mutants));
+        tableBody.innerHTML = '';
+        mutants.forEach(mutant => addMutantToTable(mutant));
     }
 </script>
 
