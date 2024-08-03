@@ -61,7 +61,7 @@
             background-color: #3b5998; /* Color azul claro al pasar el ratón */
         }
 
-        .gene-image, .ability-image, .icon-image {
+        .gene-image, .ability-image, .icon-image, .category-image {
             width: 30px; /* Tamaño de iconos aumentado */
             height: 30px; /* Tamaño de iconos aumentado */
             vertical-align: middle;
@@ -123,7 +123,9 @@
         newRow.innerHTML = `
             <td><img src="${mutant.icon}" alt="${mutant.icon}" class="icon-image"></td>
             <td>${mutant.name}</td>
-            <td>${mutant.category}</td>
+            <td>
+                <img src="https://mgg.autos/images/category/${mutant.category}.png" alt="${mutant.category}" class="category-image">
+            </td>
             <td>
                 <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
             </td>
