@@ -217,85 +217,73 @@
 </div>
 
 <script>
-    const form = document.getElementById('mutantForm');
-    const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
-    let mutants = JSON.parse(localStorage.getItem('mutants')) || [];
+  document.getElementById('mutantForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    function addMutantToTable(mutant) {
-        const newRow = tableBody.insertRow();
-        newRow.innerHTML = `
-            <td><img src="${mutant.icon}" alt="${mutant.name}" class="mutant-image"></td>
-            <td>${mutant.name}</td>
-            <td>${mutant.category}</td>
-            <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
-            </td>
-            <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
-            </td>
-            <td>
-                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image">
-            </td>
-            <td>${mutant.abilityPercentage}%</td>
-            <td>${mutant.attack1}</td>
-            <td>${mutant.attack2}</td>
-            <td>${mutant.speed}</td>
-            <td>${mutant.life}</td>
-            <td>${mutant.hibridable}</td>
-            <td>${mutant.bingo}</td>
-            <td><button onclick="deleteMutant('${mutant.name}')">Borrar</button></td>
-        `;
+    const icon = document.getElementById('icon').value;
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
+    const gene1 = document.getElementById('gene1').value;
+    const gene2 = document.getElementById('gene2').value;
+    const ability = document.getElementById('ability').value;
+    const abilityPercentage = parseFloat(document.getElementById('abilityPercentage').value);
+    const attack1 = document.getElementById('attack1').value;
+    const attack2 = document.getElementById('attack2').value;
+    const speed = parseFloat(document.getElementById('speed').value);
+    const life = parseFloat(document.getElementById('life').value);
+    const hibridable = document.getElementById('hibridable').value;
+    const bingo = document.getElementById('bingo').value;
+
+    const mutant = {
+      icon,
+      name,
+      category,
+      gene1,
+      gene2,
+      ability,
+      abilityPercentage,
+      attack1,
+      attack2,
+      speed,
+      life,
+      hibridable,
+      bingo,
+    };
+
+    try {
+      const response = await fetch('/api/mutants', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mutant),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to add mutant');
+      }
+
+      const result = await response.json();
+      console.log(result);
+
+      form.reset();
+    } catch (error) {
+      console.error('Error:', error);
     }
+  });
 
-    function deleteMutant(name) {
-        mutants = mutants.filter(mutant => mutant.name !== name);
-        localStorage.setItem('mutants', JSON.stringify(mutants));
-        tableBody.innerHTML = '';
-        mutants.forEach(mutant => addMutantToTable(mutant));
+  // Load existing mutants and add to the table
+  async function loadMutants() {
+    try {
+      const response = await fetch('/api/mutants');
+      const mutants = await response.json();
+      mutants.forEach(mutant => addMutantToTable(mutant));
+    } catch (error) {
+      console.error('Error loading mutants:', error);
     }
+  }
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const icon = document.getElementById('icon').value;
-        const name = document.getElementById('name').value;
-        const category = document.getElementById('category').value;
-        const gene1 = document.getElementById('gene1').value;
-        const gene2 = document.getElementById('gene2').value;
-        const ability = document.getElementById('ability').value;
-        const abilityPercentage = parseInt(document.getElementById('abilityPercentage').value, 10);
-        const attack1 = document.getElementById('attack1').value;
-        const attack2 = document.getElementById('attack2').value;
-        const speed = parseInt(document.getElementById('speed').value, 10);
-        const life = parseInt(document.getElementById('life').value, 10);
-        const hibridable = document.getElementById('hibridable').value;
-        const bingo = document.getElementById('bingo').value;
-
-        const mutant = {
-            icon,
-            name,
-            category,
-            gene1,
-            gene2,
-            ability,
-            abilityPercentage,
-            attack1,
-            attack2,
-            speed,
-            life,
-            hibridable,
-            bingo
-        };
-
-        mutants.push(mutant);
-        addMutantToTable(mutant);
-        localStorage.setItem('mutants', JSON.stringify(mutants));
-
-        form.reset();
-    });
-
-    // Inicializar la tabla con los datos guardados
-    mutants.forEach(mutant => addMutantToTable(mutant));
+  document.addEventListener('DOMContentLoaded', loadMutants);
 </script>
 
 </body>
