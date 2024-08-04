@@ -188,6 +188,7 @@
             mutants.forEach(mutant => addMutantToTable(mutant));
         } catch (error) {
             console.error('Error loading mutants:', error);
+            // Aquí podrías añadir un mensaje de error para el usuario si lo deseas
         }
     }
 
@@ -197,14 +198,14 @@
         const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
         const newRow = tableBody.insertRow();
         newRow.innerHTML = `
-            <td><img src="${mutant.icon}" alt="${mutant.icon}" class="icon-image"></td>
+            <td><img src="${mutant.icon}" alt="Icono del mutante ${mutant.name}" class="icon-image"></td>
             <td>${mutant.name}</td>
             <td>${mutant.category}</td>
             <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="${mutant.gene1}" class="gene-image">
+                <img src="https://mgg.autos/images/genes/${mutant.gene1}.png" alt="Gen ${mutant.gene1}" class="gene-image">
             </td>
             <td>
-                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
+                <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="Gen ${mutant.gene2}" class="gene-image">
             </td>
             <td>${mutant.ability}</td>
             <td>${mutant.abilityPercentage}%</td>
@@ -241,7 +242,10 @@
                 tableBody.innerHTML = '';
                 filteredMutants.forEach(mutant => addMutantToTable(mutant));
             })
-            .catch(error => console.error('Error filtering mutants:', error));
+            .catch(error => {
+                console.error('Error filtering mutants:', error);
+                // Aquí podrías añadir un mensaje de error para el usuario si lo deseas
+            });
     }
 
     document.getElementById('filterCategory').addEventListener('change', filterMutants);
