@@ -1,0 +1,8 @@
+{
+  "name": "mgg",
+  "version": "1.0.0",
+  "dependencies": {
+    "mongodb": "^4.5.0",  // O la versión que hayas instalado
+    // otras dependencias
+  }
+}
