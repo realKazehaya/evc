@@ -1,7 +1,7 @@
 // api/save-mutant.js
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI; // URI de tu base de datos MongoDB
+const uri = 'mongodb+srv://leogsex2001:tU2WUAWGZ8XWN3r9@cluster0.ztaekit.mongodb.net/?retryWrites=true&w=majority'; // URI de tu base de datos MongoDB
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 export default async function handler(req, res) {
