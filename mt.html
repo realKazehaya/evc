@@ -181,10 +181,20 @@
 </div>
 
 <script>
-    const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
-    const mutants = JSON.parse(localStorage.getItem('mutants')) || [];
+    async function loadMutants() {
+        try {
+            const response = await fetch('/api/mutants');
+            const mutants = await response.json();
+            mutants.forEach(mutant => addMutantToTable(mutant));
+        } catch (error) {
+            console.error('Error loading mutants:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadMutants);
 
     function addMutantToTable(mutant) {
+        const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
         const newRow = tableBody.insertRow();
         newRow.innerHTML = `
             <td><img src="${mutant.icon}" alt="${mutant.icon}" class="icon-image"></td>
@@ -196,9 +206,7 @@
             <td>
                 <img src="https://mgg.autos/images/genes/${mutant.gene2}.png" alt="${mutant.gene2}" class="gene-image">
             </td>
-            <td>
-                <img src="https://mgg.autos/images/ability/${mutant.ability}.png" alt="${mutant.ability}" class="ability-image">
-            </td>
+            <td>${mutant.ability}</td>
             <td>${mutant.abilityPercentage}%</td>
             <td>${mutant.attack1}</td>
             <td>${mutant.attack2}</td>
@@ -214,30 +222,31 @@
         const geneFilter = document.getElementById('filterGene').value;
         const sortBy = document.getElementById('filterBy').value;
 
-        const filteredMutants = mutants
-            .filter(mutant => (categoryFilter === '' || mutant.category === categoryFilter) &&
-                               (geneFilter === '' || mutant.gene1 === geneFilter || mutant.gene2 === geneFilter))
-            .sort((a, b) => {
-                if (sortBy === 'life') {
-                    return b.life - a.life;
-                } else if (sortBy === 'attack') {
-                    return Math.max(b.attack1, b.attack2) - Math.max(a.attack1, a.attack2);
-                } else {
-                    return 0;
-                }
-            });
+        fetch('/api/mutants')
+            .then(response => response.json())
+            .then(mutants => {
+                const filteredMutants = mutants
+                    .filter(mutant => (categoryFilter === '' || mutant.category === categoryFilter) &&
+                                      (geneFilter === '' || mutant.gene1 === geneFilter || mutant.gene2 === geneFilter))
+                    .sort((a, b) => {
+                        if (sortBy === 'life') {
+                            return b.life - a.life;
+                        } else if (sortBy === 'attack') {
+                            return Math.max(b.attack1, b.attack2) - Math.max(a.attack1, a.attack2);
+                        }
+                        return 0;
+                    });
 
-        tableBody.innerHTML = '';
-        filteredMutants.forEach(mutant => addMutantToTable(mutant));
+                const tableBody = document.getElementById('mutantTable').getElementsByTagName('tbody')[0];
+                tableBody.innerHTML = '';
+                filteredMutants.forEach(mutant => addMutantToTable(mutant));
+            })
+            .catch(error => console.error('Error filtering mutants:', error));
     }
 
     document.getElementById('filterCategory').addEventListener('change', filterMutants);
     document.getElementById('filterGene').addEventListener('change', filterMutants);
     document.getElementById('filterBy').addEventListener('change', filterMutants);
-
-    mutants.forEach(mutant => {
-        addMutantToTable(mutant);
-    });
 </script>
 
 </body>
