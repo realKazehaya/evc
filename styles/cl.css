@@ -1,0 +1,292 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://mgg.autos/images/mobileheader.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Header */
+header {
+    background: rgba(51, 51, 51, 0.8);
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    max-width: 300px; /* Reduce the width */
+    margin: 100px auto 0;
+    background: rgba(51, 51, 51, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 1.5rem; /* Reduce font size */
+    color: #6c63ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Sección de entrada */
+.input-section {
+    margin-bottom: 15px;
+}
+
+.input-label-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.input-icon {
+    width: 30px; /* Reduce icon size */
+    height: 30px; /* Reduce icon size */
+    margin-right: 10px;
+}
+
+.input-label-container label {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Estilo para el campo de entrada de Evo Actual */
+#CurrentEvo {
+    padding: 8px; /* Reduce padding */
+    border: 1px solid #6c63ff;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    width: calc(100% - 60px); /* Reduce width to accommodate button */
+    box-sizing: border-box;
+}
+
+/* Estilo para el campo de entrada de Créditos y Oro */
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+.input-container input[type="number"] {
+    padding: 8px; /* Reduce padding */
+    border: 1px solid #6c63ff;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    width: calc(100% - 60px); /* Adjust width for the button */
+    box-sizing: border-box;
+    margin-right: 10px; /* Space between input and button */
+}
+
+/* Selector de unidades */
+.unit-selector {
+    position: relative;
+}
+
+.unit-btn {
+    background: #6c63ff;
+    border: none;
+    color: #fff;
+    padding: 8px; /* Reduce padding */
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60px; /* Adjust width for the button */
+    text-align: center;
+}
+
+.unit-btn:hover {
+    background: #5a54e1;
+}
+
+.unit-options {
+    display: none;
+    position: absolute;
+    background: #333;
+    border: 1px solid #6c63ff;
+    border-radius: 4px;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+    width: 60px; /* Match width with the button */
+}
+
+.unit-options button {
+    background: #333;
+    border: none;
+    color: #fff;
+    padding: 8px; /* Reduce padding */
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.unit-options button:hover {
+    background: #6c63ff;
+}
+
+/* Mostrar las opciones cuando se hace clic en el botón */
+.unit-selector.active .unit-options {
+    display: block;
+}
+
+/* Botón de descuento */
+#Discount {
+    padding: 8px; /* Reduce padding */
+    border: 1px solid #6c63ff;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    width: calc(100% - 60px); /* Adjust width for the button */
+    box-sizing: border-box;
+}
+
+#CustomDiscount {
+    padding: 8px; /* Reduce padding */
+    border: 1px solid #6c63ff;
+    border-radius: 4px;
+    background: #333;
+    color: #fff;
+    font-size: 14px;
+    width: 100%; /* Full width for custom discount */
+    box-sizing: border-box;
+    display: none; /* Hidden by default */
+}
+
+/* Botones */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculate-button, .clear-button {
+    background: #6c63ff;
+    border: none;
+    color: #fff;
+    padding: 10px; /* Reduce padding */
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.calculate-button:hover, .clear-button:hover {
+    background: #5a54e1;
+}
+
+/* Resultados */
+.result-container {
+    margin-top: 10px;
+    background: #222;
+    padding: 8px; /* Reduce padding */
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    width: 30px;
+    height: 20px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: opacity 0.3s;
+}
+
+.lang-btn:hover {
+    opacity: 0.7;
+}
+
+.lang-en {
+    background-image: url('https://mgg.autos/images/us-flag.png');
+}
+
+.lang-es {
+    background-image: url('https://mgg.autos/images/es-flag.png');
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for smaller screens */
+        margin: 50px auto;
+    }
+
+    .input-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-container input[type="number"], .unit-btn {
+        width: 100%;
+    }
+
+    .unit-btn {
+        margin-top: 5px; /* Space between input and button */
+    }
+
+    .calculate-button, .clear-button {
+        margin: 5px 0;
+    }
+}

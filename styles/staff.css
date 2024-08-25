@@ -1,0 +1,191 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://mgg.autos/images/mobileheader.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    width: 30px;
+    height: 20px;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    transition: opacity 0.3s;
+}
+
+.lang-btn:hover {
+    opacity: 0.7;
+}
+
+.lang-en {
+    background-image: url('https://mgg.autos/images/us-flag.png'); /* Reemplaza con tu URL de ícono de bandera en inglés */
+}
+
+.lang-es {
+    background-image: url('https://mgg.autos/images/es-flag.png'); /* Reemplaza con tu URL de ícono de bandera en español */
+}
+
+/* Header */
+header {
+    background: rgba(51, 51, 51, 0.8); /* Fondo semitransparente */
+    padding: 20px 0; /* Hacemos el header un poco más grande */
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center; /* Alineamos el contenido en el centro */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 40px; /* Espaciado entre los elementos */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Staff Section */
+.staff {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.staff h1 {
+    font-size: 2.5rem;
+    margin: 0 0 30px;
+    color: #6c63ff; /* Color para el texto */
+}
+
+.team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member {
+    background: #333;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.member .name {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.member .role {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #ccc; /* Color más claro para el rol */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .staff h1 {
+        font-size: 2rem;
+    }
+
+    .member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .member .name {
+        font-size: 1rem;
+    }
+
+    .member .role {
+        font-size: 0.9rem;
+    }
+
+    .language-switcher {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 5px;
+    }
+
+    .lang-btn {
+        width: 25px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff h1 {
+        font-size: 1.5rem;
+    }
+
+    .member img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .member .name {
+        font-size: 0.9rem;
+    }
+
+    .member .role {
+        font-size: 0.8rem;
+    }
+
+    .language-switcher {
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 3px;
+    }
+
+    .lang-btn {
+        width: 20px;
+        height: 12px;
+    }
+}
