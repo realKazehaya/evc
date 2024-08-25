@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icono.png">
+    <title>Staff</title>
+    <link rel="stylesheet" href="styles/staff.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function loadLanguage(language) {
+                $.getJSON(`lang/${language}.json`, function(data) {
+                    $('body').find('[data-translate]').each(function() {
+                        const key = $(this).data('translate');
+                        $(this).text(data[key]);
+                    });
+                }).fail(function() {
+                    console.error('Error loading language file.');
+                });
+            }
+
+            function changeLanguage(language) {
+                localStorage.setItem('language', language);
+                loadLanguage(language);
+            }
+
+            const savedLanguage = localStorage.getItem('language') || 'es';
+            loadLanguage(savedLanguage);
+
+            $('.lang-en').click(function() {
+                changeLanguage('en');
+            });
+
+            $('.lang-es').click(function() {
+                changeLanguage('es');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <nav>
+                <ul>
+                    <li><a href="https://mgg.autos/calculadora.html"><i class="fas fa-calculator"></i> <span data-translate="calc_evo">Calculadora de EVO</span></a></li>
+                    <li><a href="https://mgg.autos/xp.html"><i class="fas fa-chart-line"></i> <span data-translate="calc_xp">Calculadora de XP</span></a></li>
+                    <li><a href="https://mgg.autos/staff.html"><i class="fas fa-users"></i> <span data-translate="staff">Staff</span></a></li>
+                    <li><a href="https://discord.com/invite/TzAuKWvfwV" target="_blank"><i class="fa-brands fa-discord"></i> <span data-translate="redes">Soporte</span></a></li>
+                    <li><a href="https://mgg.autos/emulador.html"><i class="fas fa-gamepad"></i> <span data-translate="emulador">Emulador</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="staff">
+            <h1 data-translate="conoce_equipo">Conoce a nuestro equipo</h1>
+            <div class="team-members">
+                <div class="member">
+                    <img src="https://ichef.bbci.co.uk/news/640/cpsprodpb/F1C3/production/_91019816_37269571.jpg" alt="Miembro 1">
+                    <p class="name" data-translate="nombre1">Morales</p>
+                    <p class="role" data-translate="rol1">Desarrollador</p>
+                </div>
+                <div class="member">
+                    <img src="https://yt3.googleusercontent.com/I761En52vuwPd8zEsX_lM9YlIHmnOq-eGssv90yyjJca0vNRJjWnGVrZk4ms2vgwbFTqKezG=s160-c-k-c0x00ffffff-no-rj" alt="Miembro 2">
+                    <p class="name" data-translate="nombre2">Koalin Studios</p>
+                    <p class="role" data-translate="rol2">Beta Tester</p>
+                </div>
+                <!-- Agrega más miembros según sea necesario -->
+            </div>
+        </section>
+    </main>
+
+    <div class="language-switcher">
+        <button class="lang-btn lang-en" title="English"></button>
+        <button class="lang-btn lang-es" title="Español"></button>
+    </div>
+</body>
+</html>

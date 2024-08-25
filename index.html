@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icono.png">
+    <title>MGG City</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="https://mgg.autos/calculadora.html" id="nav-calculator"><i class="fas fa-calculator"></i> Calculadora de EVO</a></li>
+                    <li><a href="https://mgg.autos/xp.html" id="nav-xp"><i class="fas fa-chart-line"></i> Calculadora de XP</a></li>
+                    <li><a href="https://mgg.autos/staff.html" id="nav-staff"><i class="fas fa-users"></i> Staff</a></li>
+                    <li><a href="https://discord.com/invite/TzAuKWvfwV" target="_blank"><i class="fa-brands fa-discord"></i> <span data-translate="redes">Soporte</span></a></li>
+                    <li><a href="https://mgg.autos/emulador.html" id="nav-emulator"><i class="fas fa-gamepad"></i> Emulador</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 id="page-title">MGG City</h1>
+                <a href="https://mgg.autos/empezar" class="start-btn" id="start-btn">Empezar Ya</a>
+            </div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </section>
+    </main>
+
+    <div class="language-switcher">
+        <button class="lang-btn lang-en" title="English" onclick="changeLanguage('en')"></button>
+        <button class="lang-btn lang-es" title="Español" onclick="changeLanguage('es')"></button>
+    </div>
+
+    <script>
+        function loadLanguage(lang) {
+            fetch(`lang/${lang}.json`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('page-title').innerText = data.title;
+                    document.getElementById('start-btn').innerText = data.startButton;
+                    document.getElementById('nav-calculator').innerText = data.nav.calculator;
+                    document.getElementById('nav-xp').innerText = data.nav.xpCalculator;
+                    document.getElementById('nav-staff').innerText = data.nav.staff;
+                    document.getElementById('nav-network').innerText = data.nav.network;
+                    document.getElementById('nav-emulator').innerText = data.nav.emulator;
+                })
+                .catch(error => {
+                    console.error('Error loading language file:', error);
+                });
+        }
+
+        function changeLanguage(lang) {
+            localStorage.setItem('language', lang);
+            loadLanguage(lang);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const lang = localStorage.getItem('language') || 'es';
+            loadLanguage(lang);
+        });
+    </script>
+</body>
+</html>
